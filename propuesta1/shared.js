@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{const path=location.pathname.split('/').pop()||'index.html';document.querySelectorAll('.menu a,.footer-nav a').forEach(a=>{if(a.getAttribute('href')===path)a.style.color='#61c438';});});
