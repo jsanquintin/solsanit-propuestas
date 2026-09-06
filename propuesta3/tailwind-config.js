@@ -15,21 +15,8 @@ tailwind.config = {
         },
       },
       fontFamily: {
-        serif: ['"Roboto Serif"', 'Georgia', 'serif'],
-        sans: ['Rubik', 'Arial', 'Helvetica', 'sans-serif'],
-      },
-      borderRadius: {
-        none: '0px',
-        DEFAULT: '0px',
-        sm: '0px',
-        md: '0px',
-        lg: '0px',
-        xl: '0px',
-        '2xl': '0px',
-        full: '9999px',
-      },
-      backgroundImage: {
-        'brand-bar': 'linear-gradient(90deg, #0A3DA7 0%, #36A936 50%, #082F75 100%)',
+        heading: ['"Plus Jakarta Sans"', 'Arial', 'sans-serif'],
+        sans: ['Inter', 'Arial', 'Helvetica', 'sans-serif'],
       },
       spacing: {
         18: '4.5rem',

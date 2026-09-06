@@ -7,7 +7,7 @@
 <title>Servicios | SOLSANIT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;500;600&family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="tailwind-config.js"></script>
 <link rel="stylesheet" href="custom.css">
@@ -23,7 +23,7 @@
         <path transform="translate(-1,-13)" d="M 14 124 L 15 138 L 20 156 L 30 174 L 40 186 L 50 194 L 63 201 L 66 201 L 69 203 L 77 205 L 100 204 L 106 201 L 109 201 L 126 191 L 133 185 L 145 169 L 151 153 L 151 148 L 152 147 L 152 136 L 151 134 L 142 147 L 133 156 L 123 163 L 113 168 L 99 171 L 75 170 L 57 164 L 51 160 L 49 160 L 35 150 L 21 135 L 15 124 Z M 65 82 L 65 93 L 66 94 L 76 80 L 92 67 L 105 61 L 116 59 L 120 57 L 137 57 L 152 60 L 174 69 L 191 81 L 207 100 L 207 89 L 205 79 L 203 76 L 201 68 L 191 51 L 184 43 L 171 33 L 159 27 L 144 23 L 127 23 L 115 26 L 93 38 L 81 49 L 73 60 L 67 73 Z" fill="#36A936"/>
       </svg>
       <span class="flex flex-col leading-tight">
-        <span class="font-serif font-semibold text-lg text-brand-bluedark">SOLSANIT</span>
+        <span class="font-heading font-extrabold text-lg text-brand-bluedark">SOLSANIT</span>
         <span class="text-[11px] text-brand-muted">Ingeniería para un mejor entorno</span>
       </span>
     </a>
@@ -34,8 +34,8 @@
       <a href="proyectos.html" class="text-brand-ink hover:text-brand-blue transition-colors">Proyectos</a>
       <a href="contacto.html" class="text-brand-ink hover:text-brand-blue transition-colors">Contacto</a>
     </nav>
-    <button id="navToggle" class="btn-press md:hidden ml-auto w-11 h-11 flex items-center justify-center border border-brand-line text-brand-bluedark" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <a href="contacto.html" class="btn-press hidden md:inline-flex bg-brand-blue text-white text-sm font-semibold px-5 py-3 hover:bg-brand-bluedark transition-colors">Cotizar proyecto</a>
+    <button id="navToggle" class="btn-press md:hidden ml-auto w-11 h-11 flex items-center justify-center border border-brand-line rounded-lg text-brand-bluedark" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <a href="contacto.html" class="btn-press hidden md:inline-flex bg-brand-blue text-white text-sm font-semibold px-5 py-3 rounded-lg hover:bg-brand-bluedark transition-colors">Cotizar proyecto</a>
   </div>
   <nav id="navMobile" class="hidden md:hidden flex-col border-t border-brand-line bg-white px-5 py-2">
     <a href="index.html" class="py-3 font-medium">Inicio</a>
@@ -50,45 +50,57 @@
 
 <section class="relative min-h-[380px] flex items-end text-white" style="background:linear-gradient(180deg,rgba(7,27,61,.6),rgba(7,27,61,.9)),url('https://www.solsanit.com/wp-content/uploads/2015/10/slide04.jpg') center/cover">
   <div class="mx-auto max-w-7xl px-5 md:px-8 pb-14 pt-32">
-    <h1 class="font-serif text-4xl sm:text-5xl leading-tight">Servicios que resuelven.</h1>
+    <h1 class="font-heading font-extrabold text-4xl sm:text-5xl leading-tight">Servicios que resuelven.</h1>
     <p class="text-slate-200 max-w-xl mt-4">Soluciones integrales para proyectos de saneamiento, agua, infraestructura, construcción y mantenimiento.</p>
   </div>
 </section>
 
 <section class="mx-auto max-w-7xl px-5 md:px-8 py-20">
   <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-    <h2 class="font-serif text-3xl sm:text-4xl text-brand-bluedark max-w-lg">De la idea a la ejecución.</h2>
+    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-bluedark max-w-lg">De la idea a la ejecución.</h2>
     <p class="text-brand-muted max-w-sm text-sm">La estructura propuesta permite explicar con claridad qué hace SOLSANIT, dando a cada servicio una presentación más profesional.</p>
   </div>
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 border-t border-l border-brand-line">
-    <div class="reveal p-8 border-r border-b border-brand-line group">
-      <svg class="w-7 h-7 text-brand-blue mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 6.5 6 10.5A6 6 0 1 1 6 13.5C6 9.5 12 3 12 3Z"/></svg>
-      <h3 class="font-serif text-lg text-brand-bluedark group-hover:text-brand-blue transition-colors mb-2">Saneamiento Ambiental</h3>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div class="reveal bg-white border border-brand-line rounded-xl p-7 hover:shadow-lg hover:-translate-y-1 transition-all">
+      <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-4">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3s6 6.5 6 10.5A6 6 0 1 1 6 13.5C6 9.5 12 3 12 3Z"/></svg>
+      </div>
+      <h3 class="font-heading font-bold text-lg text-brand-bluedark mb-2">Saneamiento Ambiental</h3>
       <p class="text-sm text-brand-muted">Soluciones para comunidades, industrias, complejos habitacionales y proyectos institucionales.</p>
     </div>
-    <div class="reveal p-8 border-r border-b border-brand-line group">
-      <svg class="w-7 h-7 text-brand-blue mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="9" width="7" height="10" rx="1"/><rect x="13" y="5" width="7" height="14" rx="1"/></svg>
-      <h3 class="font-serif text-lg text-brand-bluedark group-hover:text-brand-blue transition-colors mb-2">Plantas de Tratamiento</h3>
+    <div class="reveal bg-white border border-brand-line rounded-xl p-7 hover:shadow-lg hover:-translate-y-1 transition-all">
+      <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-4">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="9" width="7" height="10" rx="1"/><rect x="13" y="5" width="7" height="14" rx="1"/></svg>
+      </div>
+      <h3 class="font-heading font-bold text-lg text-brand-bluedark mb-2">Plantas de Tratamiento</h3>
       <p class="text-sm text-brand-muted">Diseño, construcción, adecuación, operación y mantenimiento de sistemas de tratamiento.</p>
     </div>
-    <div class="reveal p-8 border-r border-b border-brand-line group">
-      <svg class="w-7 h-7 text-brand-blue mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h6M14 12h6M10 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z"/></svg>
-      <h3 class="font-serif text-lg text-brand-bluedark group-hover:text-brand-blue transition-colors mb-2">Redes Sanitarias e Hidráulicas</h3>
+    <div class="reveal bg-white border border-brand-line rounded-xl p-7 hover:shadow-lg hover:-translate-y-1 transition-all">
+      <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-4">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12h6M14 12h6M10 12a2 2 0 1 0 4 0 2 2 0 0 0-4 0Z"/></svg>
+      </div>
+      <h3 class="font-heading font-bold text-lg text-brand-bluedark mb-2">Redes Sanitarias e Hidráulicas</h3>
       <p class="text-sm text-brand-muted">Agua potable, alcantarillado, conducción, instalación y rehabilitación de redes.</p>
     </div>
-    <div class="reveal p-8 border-r border-b border-brand-line group">
-      <svg class="w-7 h-7 text-brand-blue mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg>
-      <h3 class="font-serif text-lg text-brand-bluedark group-hover:text-brand-blue transition-colors mb-2">Construcción y Remodelación</h3>
+    <div class="reveal bg-white border border-brand-line rounded-xl p-7 hover:shadow-lg hover:-translate-y-1 transition-all">
+      <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-4">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg>
+      </div>
+      <h3 class="font-heading font-bold text-lg text-brand-bluedark mb-2">Construcción y Remodelación</h3>
       <p class="text-sm text-brand-muted">Obras civiles, edificaciones, adecuaciones y modernización de instalaciones existentes.</p>
     </div>
-    <div class="reveal p-8 border-r border-b border-brand-line group">
-      <svg class="w-7 h-7 text-brand-blue mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M6 19V9l4-3 4 3v10M14 19v-6h4v6"/></svg>
-      <h3 class="font-serif text-lg text-brand-bluedark group-hover:text-brand-blue transition-colors mb-2">Diseño y Consultoría</h3>
+    <div class="reveal bg-white border border-brand-line rounded-xl p-7 hover:shadow-lg hover:-translate-y-1 transition-all">
+      <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-4">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M6 19V9l4-3 4 3v10M14 19v-6h4v6"/></svg>
+      </div>
+      <h3 class="font-heading font-bold text-lg text-brand-bluedark mb-2">Diseño y Consultoría</h3>
       <p class="text-sm text-brand-muted">Estudios, diseño técnico, especificaciones y acompañamiento durante la ejecución.</p>
     </div>
-    <div class="reveal p-8 border-r border-b border-brand-line group">
-      <svg class="w-7 h-7 text-brand-blue mb-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 1 1.4 0l1.6 1.6a1 1 0 0 1 0 1.4l-8 8-3.4.6.6-3.4Z"/></svg>
-      <h3 class="font-serif text-lg text-brand-bluedark group-hover:text-brand-blue transition-colors mb-2">Mantenimiento</h3>
+    <div class="reveal bg-white border border-brand-line rounded-xl p-7 hover:shadow-lg hover:-translate-y-1 transition-all">
+      <div class="w-11 h-11 rounded-lg bg-blue-50 text-brand-blue flex items-center justify-center mb-4">
+        <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a1 1 0 0 1 1.4 0l1.6 1.6a1 1 0 0 1 0 1.4l-8 8-3.4.6.6-3.4Z"/></svg>
+      </div>
+      <h3 class="font-heading font-bold text-lg text-brand-bluedark mb-2">Mantenimiento</h3>
       <p class="text-sm text-brand-muted">Soporte preventivo y correctivo para mantener sistemas e infraestructura en condiciones operativas.</p>
     </div>
   </div>
@@ -96,35 +108,18 @@
 
 <section class="bg-brand-navy">
   <div class="mx-auto max-w-7xl px-5 md:px-8 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
-    <h2 class="font-serif text-2xl sm:text-3xl text-white max-w-md">Un solo equipo: más continuidad, menos improvisación.</h2>
-    <a href="contacto.html" class="btn-press inline-flex items-center bg-brand-green text-white text-sm font-semibold px-7 py-4 hover:bg-brand-greendark transition-colors">Conversemos sobre tu proyecto</a>
+    <h2 class="font-heading font-extrabold text-2xl sm:text-3xl text-white max-w-md">Un solo equipo: más continuidad, menos improvisación.</h2>
+    <a href="contacto.html" class="btn-press inline-flex items-center bg-brand-green text-white text-sm font-semibold px-7 py-4 rounded-lg hover:bg-brand-greendark transition-colors">Conversemos sobre tu proyecto</a>
   </div>
 </section>
 
 </main>
 
-<footer class="relative bg-brand-navy text-white overflow-hidden pt-16 pb-32">
-  <span class="block h-1 w-full bg-brand-bar"></span>
-  <div class="mx-auto max-w-7xl px-5 md:px-8 pt-12 grid md:grid-cols-3 gap-10">
-    <div>
-      <h2 class="font-serif text-3xl mb-4">Trabajemos juntos.</h2>
-      <a href="contacto.html" class="btn-press inline-flex items-center border border-white/40 text-white text-sm font-semibold px-6 py-3 hover:border-white transition-colors">Contáctanos</a>
-    </div>
-    <div>
-      <p class="text-xs uppercase tracking-wider text-slate-400 mb-3">Contacto</p>
-      <p class="text-sm text-slate-200">info@solsanit.com</p>
-      <p class="text-sm text-slate-200 mt-1">República Dominicana</p>
-    </div>
-    <div>
-      <p class="text-xs uppercase tracking-wider text-slate-400 mb-3">Navegación</p>
-      <div class="flex flex-col gap-2 text-sm text-slate-200">
-        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
-        <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
-        <a href="proyectos.html" class="hover:text-white transition-colors">Proyectos</a>
-      </div>
-    </div>
+<footer class="bg-white border-t border-brand-line py-10">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+    <span class="font-heading font-bold text-brand-bluedark">SOLSANIT · Ingeniería para un mejor entorno</span>
+    <span class="text-brand-muted">Soluciones integrales para un mejor entorno</span>
   </div>
-  <p class="watermark" aria-hidden="true">SOLSANIT</p>
 </footer>
 
 <script src="app.js"></script>

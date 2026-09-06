@@ -17,19 +17,6 @@ if (navToggle && navMobile) {
   }));
 }
 
-const wordCycle = document.querySelector('.word-cycle');
-if (wordCycle) {
-  const words = wordCycle.querySelectorAll('span');
-  if (words.length > 1 && !reduceMotion) {
-    let i = 0;
-    setInterval(() => {
-      words[i].classList.remove('is-active');
-      i = (i + 1) % words.length;
-      words[i].classList.add('is-active');
-    }, 2600);
-  }
-}
-
 const contactForm = document.getElementById('contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', e => {

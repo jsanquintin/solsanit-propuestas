@@ -7,7 +7,7 @@
 <title>Proyectos | SOLSANIT</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@400;500;600&family=Rubik:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="tailwind-config.js"></script>
 <link rel="stylesheet" href="custom.css">
@@ -23,7 +23,7 @@
         <path transform="translate(-1,-13)" d="M 14 124 L 15 138 L 20 156 L 30 174 L 40 186 L 50 194 L 63 201 L 66 201 L 69 203 L 77 205 L 100 204 L 106 201 L 109 201 L 126 191 L 133 185 L 145 169 L 151 153 L 151 148 L 152 147 L 152 136 L 151 134 L 142 147 L 133 156 L 123 163 L 113 168 L 99 171 L 75 170 L 57 164 L 51 160 L 49 160 L 35 150 L 21 135 L 15 124 Z M 65 82 L 65 93 L 66 94 L 76 80 L 92 67 L 105 61 L 116 59 L 120 57 L 137 57 L 152 60 L 174 69 L 191 81 L 207 100 L 207 89 L 205 79 L 203 76 L 201 68 L 191 51 L 184 43 L 171 33 L 159 27 L 144 23 L 127 23 L 115 26 L 93 38 L 81 49 L 73 60 L 67 73 Z" fill="#36A936"/>
       </svg>
       <span class="flex flex-col leading-tight">
-        <span class="font-serif font-semibold text-lg text-brand-bluedark">SOLSANIT</span>
+        <span class="font-heading font-extrabold text-lg text-brand-bluedark">SOLSANIT</span>
         <span class="text-[11px] text-brand-muted">Ingeniería para un mejor entorno</span>
       </span>
     </a>
@@ -34,8 +34,8 @@
       <a href="proyectos.html" class="text-brand-bluedark border-b-2 border-brand-green pb-1">Proyectos</a>
       <a href="contacto.html" class="text-brand-ink hover:text-brand-blue transition-colors">Contacto</a>
     </nav>
-    <button id="navToggle" class="btn-press md:hidden ml-auto w-11 h-11 flex items-center justify-center border border-brand-line text-brand-bluedark" aria-label="Abrir menú" aria-expanded="false">☰</button>
-    <a href="contacto.html" class="btn-press hidden md:inline-flex bg-brand-blue text-white text-sm font-semibold px-5 py-3 hover:bg-brand-bluedark transition-colors">Cotizar proyecto</a>
+    <button id="navToggle" class="btn-press md:hidden ml-auto w-11 h-11 flex items-center justify-center border border-brand-line rounded-lg text-brand-bluedark" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <a href="contacto.html" class="btn-press hidden md:inline-flex bg-brand-blue text-white text-sm font-semibold px-5 py-3 rounded-lg hover:bg-brand-bluedark transition-colors">Cotizar proyecto</a>
   </div>
   <nav id="navMobile" class="hidden md:hidden flex-col border-t border-brand-line bg-white px-5 py-2">
     <a href="index.html" class="py-3 font-medium">Inicio</a>
@@ -50,98 +50,81 @@
 
 <section class="relative min-h-[380px] flex items-end text-white" style="background:linear-gradient(180deg,rgba(7,27,61,.6),rgba(7,27,61,.9)),url('https://www.solsanit.com/wp-content/uploads/2015/10/slide03.jpg') center/cover">
   <div class="mx-auto max-w-7xl px-5 md:px-8 pb-14 pt-32">
-    <h1 class="font-serif text-4xl sm:text-5xl leading-tight">Obras reales. Impacto real.</h1>
+    <h1 class="font-heading font-extrabold text-4xl sm:text-5xl leading-tight">Obras reales. Impacto real.</h1>
     <p class="text-slate-200 max-w-xl mt-4">Una presentación más visual de la experiencia de SOLSANIT, organizada por tipo de proyecto y área técnica.</p>
   </div>
 </section>
 
 <section class="mx-auto max-w-7xl px-5 md:px-8 py-20">
   <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-    <h2 class="font-serif text-3xl sm:text-4xl text-brand-bluedark max-w-lg">Proyectos que demuestran capacidad.</h2>
+    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-bluedark max-w-lg">Proyectos que demuestran capacidad.</h2>
     <p class="text-brand-muted max-w-sm text-sm">La web convierte los proyectos ejecutados en evidencia clara de experiencia, alcance y especialización.</p>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-    <figure class="project-card reveal relative md:row-span-2 min-h-[280px] md:min-h-[520px] overflow-hidden bg-white border border-brand-line"
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <article class="project-card reveal bg-white rounded-xl overflow-hidden border border-brand-line"
       data-img="https://www.solsanit.com/wp-content/uploads/2015/10/slide03.jpg"
       data-category="Tratamiento de aguas" data-title="Infraestructura de saneamiento"
       data-desc="Diseño y ejecución de soluciones para el tratamiento y manejo de aguas residuales."
       data-scope="Diseño, construcción y puesta en marcha del sistema de tratamiento." data-location="República Dominicana">
-      <img src="https://www.solsanit.com/wp-content/uploads/2015/10/slide03.jpg" alt="Proyecto de tratamiento de aguas" loading="lazy" class="w-full h-full object-cover">
-      <figcaption class="project-caption absolute inset-x-0 bottom-0 bg-brand-navy/85 text-white p-5">
-        <span class="text-[11px] uppercase tracking-wider text-brand-green font-semibold">Tratamiento de aguas</span>
-        <h3 class="font-serif text-lg mt-1">Infraestructura de saneamiento</h3>
-        <p class="text-sm text-slate-200 mt-1">Diseño y ejecución de soluciones para el tratamiento y manejo de aguas residuales.</p>
-      </figcaption>
-    </figure>
-    <figure class="project-card reveal relative min-h-[240px] overflow-hidden bg-white border border-brand-line"
+      <div class="overflow-hidden h-52"><img src="https://www.solsanit.com/wp-content/uploads/2015/10/slide03.jpg" alt="Proyecto de tratamiento de aguas" loading="lazy" class="w-full h-full object-cover"></div>
+      <div class="p-5">
+        <small class="text-brand-greendark uppercase font-bold text-[11px] tracking-wide">Tratamiento de aguas</small>
+        <h3 class="font-heading font-bold text-brand-bluedark mt-1">Infraestructura de saneamiento</h3>
+        <p class="text-sm text-brand-muted mt-1">Diseño y ejecución de soluciones para el tratamiento y manejo de aguas residuales.</p>
+      </div>
+    </article>
+    <article class="project-card reveal bg-white rounded-xl overflow-hidden border border-brand-line"
       data-img="https://www.solsanit.com/wp-content/uploads/2015/10/slide04.jpg"
       data-category="Redes sanitarias" data-title="Redes e infraestructura hidráulica"
       data-desc="Excavación, instalación, adecuación y rehabilitación de sistemas de conducción."
       data-scope="Instalación y rehabilitación de redes de conducción sanitaria e hidráulica." data-location="República Dominicana">
-      <img src="https://www.solsanit.com/wp-content/uploads/2015/10/slide04.jpg" alt="Proyecto de redes sanitarias" loading="lazy" class="w-full h-full object-cover">
-      <figcaption class="project-caption absolute inset-x-0 bottom-0 bg-brand-navy/85 text-white p-4">
-        <span class="text-[11px] uppercase tracking-wider text-brand-green font-semibold">Redes sanitarias</span>
-        <h3 class="font-serif text-base mt-1">Redes e infraestructura hidráulica</h3>
-        <p class="text-sm text-slate-200 mt-1">Excavación, instalación, adecuación y rehabilitación de sistemas de conducción.</p>
-      </figcaption>
-    </figure>
-    <figure class="project-card reveal relative min-h-[240px] overflow-hidden bg-white border border-brand-line"
+      <div class="overflow-hidden h-52"><img src="https://www.solsanit.com/wp-content/uploads/2015/10/slide04.jpg" alt="Proyecto de redes sanitarias" loading="lazy" class="w-full h-full object-cover"></div>
+      <div class="p-5">
+        <small class="text-brand-greendark uppercase font-bold text-[11px] tracking-wide">Redes sanitarias</small>
+        <h3 class="font-heading font-bold text-brand-bluedark mt-1">Redes e infraestructura hidráulica</h3>
+        <p class="text-sm text-brand-muted mt-1">Excavación, instalación, adecuación y rehabilitación de sistemas de conducción.</p>
+      </div>
+    </article>
+    <article class="project-card reveal bg-white rounded-xl overflow-hidden border border-brand-line"
       data-img="https://www.solsanit.com/wp-content/uploads/2015/10/slide05.jpg"
       data-category="Construcción" data-title="Edificaciones y remodelaciones"
       data-desc="Obras civiles y adecuaciones para distintos tipos de clientes y necesidades."
       data-scope="Construcción, remodelación y adecuación de edificaciones." data-location="República Dominicana">
-      <img src="https://www.solsanit.com/wp-content/uploads/2015/10/slide05.jpg" alt="Proyecto de construcción" loading="lazy" class="w-full h-full object-cover">
-      <figcaption class="project-caption absolute inset-x-0 bottom-0 bg-brand-navy/85 text-white p-4">
-        <span class="text-[11px] uppercase tracking-wider text-brand-green font-semibold">Construcción</span>
-        <h3 class="font-serif text-base mt-1">Edificaciones y remodelaciones</h3>
-        <p class="text-sm text-slate-200 mt-1">Obras civiles y adecuaciones para distintos tipos de clientes y necesidades.</p>
-      </figcaption>
-    </figure>
+      <div class="overflow-hidden h-52"><img src="https://www.solsanit.com/wp-content/uploads/2015/10/slide05.jpg" alt="Proyecto de construcción" loading="lazy" class="w-full h-full object-cover"></div>
+      <div class="p-5">
+        <small class="text-brand-greendark uppercase font-bold text-[11px] tracking-wide">Construcción</small>
+        <h3 class="font-heading font-bold text-brand-bluedark mt-1">Edificaciones y remodelaciones</h3>
+        <p class="text-sm text-brand-muted mt-1">Obras civiles y adecuaciones para distintos tipos de clientes y necesidades.</p>
+      </div>
+    </article>
   </div>
 </section>
 
 <section class="bg-brand-bg py-20">
   <div class="mx-auto max-w-7xl px-5 md:px-8 max-w-2xl">
-    <h2 class="font-serif text-3xl sm:text-4xl text-brand-bluedark">Cada proyecto contará mejor su historia.</h2>
+    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-brand-bluedark">Cada proyecto contará mejor su historia.</h2>
     <p class="text-brand-muted mt-4">La propuesta contempla fichas de proyecto con fotografías, servicio realizado, ubicación, alcance, descripción técnica y resultados, siempre utilizando información validada por SOLSANIT.</p>
-    <a href="contacto.html" class="btn-press inline-flex items-center bg-brand-bluedark text-white text-sm font-semibold px-6 py-3.5 hover:bg-brand-blue transition-colors mt-6">Hablar sobre un proyecto</a>
+    <a href="contacto.html" class="btn-press inline-flex items-center bg-brand-bluedark text-white text-sm font-semibold px-6 py-3.5 rounded-lg hover:bg-brand-blue transition-colors mt-6">Hablar sobre un proyecto</a>
   </div>
 </section>
 
 </main>
 
-<footer class="relative bg-brand-navy text-white overflow-hidden pt-16 pb-32">
-  <span class="block h-1 w-full bg-brand-bar"></span>
-  <div class="mx-auto max-w-7xl px-5 md:px-8 pt-12 grid md:grid-cols-3 gap-10">
-    <div>
-      <h2 class="font-serif text-3xl mb-4">Trabajemos juntos.</h2>
-      <a href="contacto.html" class="btn-press inline-flex items-center border border-white/40 text-white text-sm font-semibold px-6 py-3 hover:border-white transition-colors">Contáctanos</a>
-    </div>
-    <div>
-      <p class="text-xs uppercase tracking-wider text-slate-400 mb-3">Contacto</p>
-      <p class="text-sm text-slate-200">info@solsanit.com</p>
-      <p class="text-sm text-slate-200 mt-1">República Dominicana</p>
-    </div>
-    <div>
-      <p class="text-xs uppercase tracking-wider text-slate-400 mb-3">Navegación</p>
-      <div class="flex flex-col gap-2 text-sm text-slate-200">
-        <a href="index.html" class="hover:text-white transition-colors">Inicio</a>
-        <a href="nosotros.html" class="hover:text-white transition-colors">Nosotros</a>
-        <a href="servicios.html" class="hover:text-white transition-colors">Servicios</a>
-      </div>
-    </div>
+<footer class="bg-white border-t border-brand-line py-10">
+  <div class="mx-auto max-w-7xl px-5 md:px-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm">
+    <span class="font-heading font-bold text-brand-bluedark">SOLSANIT · Ingeniería para un mejor entorno</span>
+    <span class="text-brand-muted">Infraestructura que deja huella</span>
   </div>
-  <p class="watermark" aria-hidden="true">SOLSANIT</p>
 </footer>
 
 <!-- PROJECT DETAIL MODAL -->
 <div id="projectModal" class="modal-backdrop flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-panel bg-white max-w-xl w-full max-h-[85vh] overflow-y-auto relative">
-    <button data-close aria-label="Cerrar" class="btn-press absolute right-4 top-4 z-10 w-9 h-9 flex items-center justify-center bg-white/90 border border-brand-line hover:border-brand-blue">✕</button>
+  <div class="modal-panel bg-white rounded-xl max-w-xl w-full max-h-[85vh] overflow-y-auto relative">
+    <button data-close aria-label="Cerrar" class="btn-press absolute right-4 top-4 z-10 w-9 h-9 flex items-center justify-center bg-white/90 border border-brand-line rounded-full hover:border-brand-blue">✕</button>
     <img data-field="image" src="" alt="" class="w-full h-64 object-cover">
     <div class="p-8">
       <span data-field="category" class="text-[11px] uppercase tracking-wider text-brand-greendark font-semibold"></span>
-      <h2 id="modalTitle" data-field="title" class="font-serif text-2xl text-brand-bluedark mt-2 mb-3"></h2>
+      <h2 id="modalTitle" data-field="title" class="font-heading font-bold text-2xl text-brand-bluedark mt-2 mb-3"></h2>
       <p data-field="desc" class="text-brand-muted mb-4"></p>
       <dl class="grid grid-cols-2 gap-4 border-t border-brand-line pt-4">
         <div>
