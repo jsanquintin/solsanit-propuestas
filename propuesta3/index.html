@@ -51,22 +51,22 @@
 
 <main id="main">
 
-<!-- HERO: full-bleed photo dominates, text anchored bottom-left with a scrim only behind it — not a full dark overlay -->
-<section class="relative min-h-[88vh] flex items-end text-white overflow-hidden">
-  <img src="assets/generated/hero-plant.png" alt="Planta de tratamiento de SOLSANIT" class="absolute inset-0 w-full h-full object-cover">
-  <div class="absolute inset-0" style="background:linear-gradient(0deg, rgba(7,27,61,.92) 0%, rgba(7,27,61,.72) 38%, rgba(7,27,61,.15) 68%, rgba(7,27,61,0) 85%)"></div>
-  <div class="relative mx-auto max-w-6xl px-5 md:px-8 pb-16 pt-24 w-full">
-    <h1 class="font-heading font-black text-[34px] leading-[1.08] sm:text-5xl sm:leading-[1.05] max-w-2xl">Infraestructura sanitaria e hidráulica construida para durar.</h1>
-    <p class="text-slate-200 mt-5 max-w-lg text-lg">Desde 2006 diseñamos, construimos y mantenemos la infraestructura de saneamiento ambiental, redes hidráulicas y obra civil que República Dominicana necesita para funcionar. Veinte años después, en 2026, seguimos en el terreno.</p>
-    <div class="flex flex-wrap gap-6 mt-8 items-center">
-      <a href="proyectos.html" class="btn-press inline-flex items-center bg-white text-brand-navy text-sm font-bold uppercase tracking-wide px-7 py-4 hover:bg-slate-200 transition-colors">Ver proyectos</a>
-      <a href="contacto.html" class="btn-press inline-flex items-center text-white text-sm font-bold uppercase tracking-wide border-b-2 border-white/60 pb-1 hover:border-white transition-colors">Conversemos</a>
+<!-- HERO: two clean panels side by side, no overlay/scrim on the photo, no text-on-image at all -->
+<section class="grid md:grid-cols-2">
+  <div class="bg-brand-navy text-white flex items-center px-5 md:px-12 py-16 md:py-24">
+    <div class="max-w-xl">
+      <h1 class="font-heading font-black text-[34px] leading-[1.08] sm:text-5xl sm:leading-[1.05]">Infraestructura sanitaria e hidráulica construida para durar.</h1>
+      <p class="text-slate-300 mt-6 text-lg">Desde 2006 diseñamos, construimos y mantenemos la infraestructura de saneamiento ambiental, redes hidráulicas y obra civil que República Dominicana necesita para funcionar. Veinte años después, en 2026, seguimos en el terreno.</p>
+      <div class="flex flex-wrap gap-6 mt-9 items-center">
+        <a href="proyectos.html" class="btn-press inline-flex items-center bg-white text-brand-navy text-sm font-bold uppercase tracking-wide px-7 py-4 hover:bg-slate-200 transition-colors">Ver proyectos</a>
+        <a href="contacto.html" class="btn-press inline-flex items-center text-white text-sm font-bold uppercase tracking-wide border-b-2 border-white/60 pb-1 hover:border-white transition-colors">Conversemos</a>
+      </div>
     </div>
   </div>
-  <div class="hero-scroll-cue" aria-hidden="true">
-    <span>Descubre más</span>
-    <span class="hero-scroll-cue-dot"></span>
+  <div class="min-h-[280px] md:min-h-0">
+    <img src="assets/generated/hero-plant.png" alt="Planta de tratamiento de SOLSANIT" class="w-full h-full object-cover">
   </div>
+</section>
 </section>
 
 <div class="flow-seam" aria-hidden="true"><svg viewBox="0 0 1200 32" preserveAspectRatio="none"><path d="M0,16 C150,2 300,30 450,16 C600,2 750,30 900,16 C1000,7 1100,25 1200,14" fill="none" stroke="url(#flowGrad)" stroke-width="2.5" stroke-linecap="round"/></svg></div>
