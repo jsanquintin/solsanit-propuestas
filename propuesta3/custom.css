@@ -7,6 +7,20 @@
 .flow-seam svg{display:block;width:100%;height:28px;margin-top:-14px}
 .flow-mark{display:inline-block;vertical-align:middle}
 
+/* ---- stat annotation: leader-bar dimension marks, not icon/rounded stat cards ---- */
+.stat-annot{position:relative;padding-left:16px}
+.stat-annot::before{content:'';position:absolute;left:0;top:2px;bottom:2px;width:2px;background:#0A3DA7}
+.stat-annot-accent::before{background:#36A936}
+.stat-annot-num{font-family:'Archivo',sans-serif;font-weight:900;font-size:28px;line-height:1;color:#071B3D}
+.stat-annot-label{font-size:11px;color:#5B6B7A;margin-top:6px;text-transform:uppercase;letter-spacing:.04em}
+
+/* ---- process step: technical axis + node marker, not icon-in-circle ---- */
+.process-step{position:relative;padding-top:26px}
+.process-step::before{content:'';position:absolute;left:0;top:0;width:100%;height:1px;background:rgba(255,255,255,.18)}
+.process-step::after{content:'';position:absolute;left:0;top:-3px;width:7px;height:7px;border-radius:50%;background:#8FA3C9}
+.process-step-accent::after{background:#36A936}
+.process-step-num{font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;letter-spacing:.05em;color:#64748b}
+
 /* ---- service list row: hairline dividers, accent bar grows in on hover ---- */
 .service-row{position:relative;border-top:1px solid #E1DED5}
 .service-row:last-child{border-bottom:1px solid #E1DED5}
