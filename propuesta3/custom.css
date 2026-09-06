@@ -7,12 +7,10 @@
 .flow-seam svg{display:block;width:100%;height:28px;margin-top:-14px}
 .flow-mark{display:inline-block;vertical-align:middle}
 
-/* ---- stat annotation: leader-bar dimension marks, not icon/rounded stat cards ---- */
-.stat-annot{position:relative;padding-left:16px}
-.stat-annot::before{content:'';position:absolute;left:0;top:2px;bottom:2px;width:2px;background:#0A3DA7}
-.stat-annot-accent::before{background:#36A936}
-.stat-annot-num{font-family:'Archivo',sans-serif;font-weight:900;font-size:28px;line-height:1;color:#071B3D}
-.stat-annot-label{font-size:11px;color:#5B6B7A;margin-top:6px;text-transform:uppercase;letter-spacing:.04em}
+/* ---- big numeral: one oversized editorial statement, replaces the generic
+   "row of stat cards" pattern seen on cpmar.com.do and most of the sector ---- */
+.big-numeral{font-family:'Archivo',sans-serif;font-weight:900;line-height:0.8;color:#0A3DA7;font-size:140px;letter-spacing:-0.02em}
+@media (min-width:640px){.big-numeral{font-size:220px}}
 
 /* ---- process step: technical axis + node marker, not icon-in-circle ---- */
 .process-step{position:relative;padding-top:26px}
