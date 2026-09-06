@@ -1,28 +1,14 @@
 /* SOLSANIT — small set of things Tailwind utilities can't express cleanly */
 
-/* ---- subtle ripple/wave texture for navy panels (hero, CTA band) ---- */
-.wave-panel{
-  position:relative;
-  overflow:hidden;
-  background:linear-gradient(115deg, #0B2942 0%, #123A5C 60%, #0B2942 100%);
+/* ---- service list row: hairline dividers, accent bar grows in on hover ---- */
+.service-row{position:relative;border-top:1px solid #E1DED5}
+.service-row:last-child{border-bottom:1px solid #E1DED5}
+.service-row::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:#0A3DA7;transform:scaleY(0);transform-origin:top;
+  transition:transform 300ms var(--ease-out, ease);
 }
-.wave-panel::before{
-  content:'';
-  position:absolute;
-  inset:-20% -10%;
-  background-image:
-    repeating-radial-gradient(circle at 0% 50%, transparent 0, transparent 60px, rgba(255,255,255,.05) 61px, rgba(255,255,255,.05) 62px);
-  pointer-events:none;
-}
-
-/* ---- icon badge overlapping the bottom-left corner of a card photo ---- */
-.icon-badge{
-  width:52px;height:52px;border-radius:9999px;
-  background:#1B7F86;color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 6px 16px rgba(11,41,66,.25);
-  border:3px solid #fff;
-}
+.service-row:hover::before{transform:scaleY(1)}
 
 /* ---- motion tokens (Emil Kowalski: custom curves, not the weak CSS defaults) ---- */
 :root{
