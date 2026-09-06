@@ -1,5 +1,29 @@
 /* SOLSANIT — small set of things Tailwind utilities can't express cleanly */
 
+/* ---- subtle ripple/wave texture for navy panels (hero, CTA band) ---- */
+.wave-panel{
+  position:relative;
+  overflow:hidden;
+  background:linear-gradient(115deg, #0B2942 0%, #123A5C 60%, #0B2942 100%);
+}
+.wave-panel::before{
+  content:'';
+  position:absolute;
+  inset:-20% -10%;
+  background-image:
+    repeating-radial-gradient(circle at 0% 50%, transparent 0, transparent 60px, rgba(255,255,255,.05) 61px, rgba(255,255,255,.05) 62px);
+  pointer-events:none;
+}
+
+/* ---- icon badge overlapping the bottom-left corner of a card photo ---- */
+.icon-badge{
+  width:52px;height:52px;border-radius:9999px;
+  background:#1B7F86;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 16px rgba(11,41,66,.25);
+  border:3px solid #fff;
+}
+
 /* ---- motion tokens (Emil Kowalski: custom curves, not the weak CSS defaults) ---- */
 :root{
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);

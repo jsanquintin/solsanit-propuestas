@@ -3,15 +3,15 @@ tailwind.config = {
     extend: {
       colors: {
         brand: {
-          blue: '#0A3DA7',
-          bluedark: '#082F75',
-          green: '#36A936',
-          greendark: '#237A28',
-          navy: '#071B3D',
-          ink: '#182B45',
-          muted: '#5B6B82',
-          bg: '#F7F6F2',
-          line: '#E4E1D8',
+          navy: '#0B2942',
+          navy2: '#123A5C',
+          teal: '#1B7F86',
+          tealdark: '#146267',
+          tealsoft: '#E3F1F1',
+          ink: '#0F2A3D',
+          muted: '#64748B',
+          bg: '#F4F7F9',
+          line: '#E2E8EF',
         },
       },
       fontFamily: {
