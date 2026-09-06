@@ -4,6 +4,19 @@ const preferredDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme:
 const initialTheme=savedTheme||(preferredDark?'dark':'light');
 root.dataset.theme=initialTheme;
 
+const LIGHT_LOGO='logo-solsanit-light-crisp.svg?v=10';
+const DARK_LOGO='logo-solsanit-dark-crisp.svg?v=10';
+const logo=document.querySelector('.brand img');
+const syncLogo=()=>{
+  if(!logo) return;
+  const dark=root.dataset.theme==='dark';
+  const nextSrc=dark?DARK_LOGO:LIGHT_LOGO;
+  if(!logo.src.endsWith(nextSrc)) logo.src=nextSrc;
+  logo.width=810;
+  logo.height=227;
+};
+syncLogo();
+
 const themeStyles=document.createElement('style');
 themeStyles.textContent=`
 .theme-toggle{width:44px;height:44px;flex:0 0 44px;border-radius:50%;border:1px solid rgba(8,47,117,.16);background:#f4f8fb;color:#082F75;display:grid;place-items:center;font-size:19px;cursor:pointer;transition:.25s;box-shadow:0 6px 18px rgba(8,47,117,.08)}
@@ -30,11 +43,6 @@ html[data-theme='light'] .theme-toggle{background:#F4F8FB;color:#082F75;border-c
 html[data-theme='dark'] body{background:#061F4B;color:#EEF5FB}
 html[data-theme='dark'] .top{background:#051A40;border-color:rgba(255,255,255,.10);box-shadow:0 8px 24px rgba(0,0,0,.18)}
 html[data-theme='dark'] .brand{background:transparent;padding:0;border-radius:0;box-shadow:none}
-.brand{position:relative;overflow:visible}
-.brand .brand-logo-base,.brand .brand-logo-darktext{position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:contain;object-position:left center}
-.brand .brand-logo-darktext{display:none;pointer-events:none}
-html[data-theme='dark'] .brand .brand-logo-base{clip-path:inset(0 71% 0 0)}
-html[data-theme='dark'] .brand .brand-logo-darktext{display:block;clip-path:inset(0 0 0 27%);filter:brightness(0) invert(1);opacity:.98}
 html[data-theme='dark'] .menu{color:#E7F0FC}
 html[data-theme='dark'] .menu a:hover,html[data-theme='dark'] .menu a.active{color:#fff}
 html[data-theme='dark'] .section{background:#061F4B;color:#EEF5FB}
@@ -56,19 +64,6 @@ html[data-theme='dark'] .theme-toggle{background:#0A347D;color:#fff;border-color
 `;
 document.head.appendChild(themeStyles);
 
-const brand=document.querySelector('.brand');
-if(brand){
-  const baseLogo=brand.querySelector('img');
-  if(baseLogo){
-    baseLogo.classList.add('brand-logo-base');
-    const darkTextLogo=baseLogo.cloneNode(true);
-    darkTextLogo.className='brand-logo-darktext';
-    darkTextLogo.alt='';
-    darkTextLogo.setAttribute('aria-hidden','true');
-    brand.appendChild(darkTextLogo);
-  }
-}
-
 const nav=document.querySelector('.nav');
 const accent=document.querySelector('.accent');
 if(nav){
@@ -80,6 +75,7 @@ if(nav){
     themeButton.textContent=dark?'☀':'☾';
     themeButton.setAttribute('aria-label',dark?'Cambiar a modo claro':'Cambiar a modo oscuro');
     themeButton.title=dark?'Modo claro':'Modo oscuro';
+    syncLogo();
   };
   syncThemeButton();
   themeButton.addEventListener('click',()=>{
