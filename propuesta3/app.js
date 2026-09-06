@@ -29,7 +29,12 @@ html[data-theme='light'] .footer strong{color:#082F75}
 html[data-theme='light'] .theme-toggle{background:#F4F8FB;color:#082F75;border-color:#D8E3ED}
 html[data-theme='dark'] body{background:#061F4B;color:#EEF5FB}
 html[data-theme='dark'] .top{background:#051A40;border-color:rgba(255,255,255,.10);box-shadow:0 8px 24px rgba(0,0,0,.18)}
-html[data-theme='dark'] .brand{background:#fff;padding:5px 9px;border-radius:12px}
+html[data-theme='dark'] .brand{background:transparent;padding:0;border-radius:0;box-shadow:none}
+.brand{position:relative;overflow:visible}
+.brand .brand-logo-base,.brand .brand-logo-darktext{position:absolute;inset:0;width:100%;height:100%;max-height:none;object-fit:contain;object-position:left center}
+.brand .brand-logo-darktext{display:none;pointer-events:none}
+html[data-theme='dark'] .brand .brand-logo-base{clip-path:inset(0 71% 0 0)}
+html[data-theme='dark'] .brand .brand-logo-darktext{display:block;clip-path:inset(0 0 0 27%);filter:brightness(0) invert(1);opacity:.98}
 html[data-theme='dark'] .menu{color:#E7F0FC}
 html[data-theme='dark'] .menu a:hover,html[data-theme='dark'] .menu a.active{color:#fff}
 html[data-theme='dark'] .section{background:#061F4B;color:#EEF5FB}
@@ -50,6 +55,19 @@ html[data-theme='dark'] .theme-toggle{background:#0A347D;color:#fff;border-color
 @media(max-width:900px){html[data-theme='dark'] .menu{background:#051A40;border-color:rgba(255,255,255,.10)}.theme-toggle{width:40px;height:40px;flex-basis:40px;font-size:17px}}
 `;
 document.head.appendChild(themeStyles);
+
+const brand=document.querySelector('.brand');
+if(brand){
+  const baseLogo=brand.querySelector('img');
+  if(baseLogo){
+    baseLogo.classList.add('brand-logo-base');
+    const darkTextLogo=baseLogo.cloneNode(true);
+    darkTextLogo.className='brand-logo-darktext';
+    darkTextLogo.alt='';
+    darkTextLogo.setAttribute('aria-hidden','true');
+    brand.appendChild(darkTextLogo);
+  }
+}
 
 const nav=document.querySelector('.nav');
 const accent=document.querySelector('.accent');
