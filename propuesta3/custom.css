@@ -1,5 +1,12 @@
 /* SOLSANIT — small set of things Tailwind utilities can't express cleanly */
 
+/* ---- flow line: the SOLSANIT signature mark — a water/pipeline line in
+   brand gradient, placed at the same seam on every page so it becomes
+   recognizable on its own, independent of any icon or component kit ---- */
+.flow-seam{position:relative;height:0;z-index:10}
+.flow-seam svg{display:block;width:100%;height:28px;margin-top:-14px}
+.flow-mark{display:inline-block;vertical-align:middle}
+
 /* ---- service list row: hairline dividers, accent bar grows in on hover ---- */
 .service-row{position:relative;border-top:1px solid #E1DED5}
 .service-row:last-child{border-bottom:1px solid #E1DED5}
