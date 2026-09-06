@@ -56,11 +56,11 @@
 
 <main id="main">
 
-<!-- HERO: two clean panels side by side, no overlay/scrim on the photo, no text-on-image at all -->
-<section class="grid md:grid-cols-2">
-  <div class="bg-brand-navy text-white flex items-center px-5 md:px-12 py-16 md:py-24">
-    <div class="max-w-xl">
-      <h1 class="font-heading font-black text-[34px] leading-[1.08] sm:text-5xl sm:leading-[1.05]">Infraestructura sanitaria e hidráulica construida para durar.</h1>
+<!-- HERO: asymmetric panels (5/7 split, photo dominant), no overlay/scrim on the photo, no text-on-image -->
+<section class="grid md:grid-cols-[5fr_7fr]">
+  <div class="bg-brand-navy text-white flex items-center px-5 md:px-12 py-16 md:py-28">
+    <div class="max-w-md">
+      <h1 class="font-heading font-black text-[34px] leading-[1.08] sm:text-[3.25rem] sm:leading-[1.04] tracking-tight">Infraestructura sanitaria e hidráulica construida para durar.</h1>
       <p class="text-slate-300 mt-6 text-lg">Diseñamos, construimos y mantenemos infraestructura de saneamiento, redes hidráulicas y obra civil en toda República Dominicana.</p>
       <div class="flex flex-wrap gap-6 mt-9 items-center">
         <a href="proyectos.html" class="btn-press inline-flex items-center bg-white text-brand-navy text-sm font-bold uppercase tracking-wide px-7 py-4 hover:bg-slate-200 transition-colors">Ver proyectos</a>
@@ -68,10 +68,13 @@
       </div>
     </div>
   </div>
-  <div class="min-h-[280px] md:min-h-0">
-    <img src="assets/generated/hero-plant.png" alt="Planta de tratamiento de SOLSANIT" class="w-full h-full object-cover">
+  <div class="relative min-h-[320px] md:min-h-0 overflow-hidden group">
+    <img src="assets/generated/hero-plant.png" alt="Planta de tratamiento de SOLSANIT" class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+    <div class="absolute left-6 bottom-6 sm:left-8 sm:bottom-8 bg-brand-navy/90 text-white px-4 py-2.5">
+      <p class="text-[11px] uppercase tracking-widest text-slate-400">Proyecto SOLSANIT</p>
+      <p class="text-sm font-semibold mt-0.5">Planta de tratamiento · Santo Domingo, R.D.</p>
+    </div>
   </div>
-</section>
 </section>
 
 <div class="flow-seam" aria-hidden="true"><svg viewBox="0 0 1200 32" preserveAspectRatio="none"><path d="M0,16 C150,2 300,30 450,16 C600,2 750,30 900,16 C1000,7 1100,25 1200,14" fill="none" stroke="url(#flowGrad)" stroke-width="2.5" stroke-linecap="round"/></svg></div>
@@ -85,9 +88,9 @@
 </section>
 
 <!-- SERVICES: typographic list, hairline dividers, no icon circles, no cards -->
-<section class="py-24">
+<section class="py-28">
   <div class="mx-auto max-w-6xl px-5 md:px-8">
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
       <h2 class="font-heading font-black text-4xl sm:text-5xl text-brand-bluedark max-w-lg">Seis frentes de trabajo, un mismo equipo.</h2>
       <p class="text-brand-muted max-w-sm text-sm">Diseñar, construir y mantener bajo un mismo techo reduce el riesgo del proyecto y da continuidad de principio a fin.</p>
     </div>
@@ -113,7 +116,7 @@
 </section>
 
 <!-- PROCESS: technical schematic diagram (axis + nodes), not icon-in-circle cards -->
-<section class="bg-brand-navy py-24">
+<section class="bg-brand-navy py-28">
   <div class="mx-auto max-w-6xl px-5 md:px-8">
     <span class="text-xs uppercase tracking-widest text-slate-500 font-bold">Cómo trabajamos</span>
     <h2 class="font-heading font-black text-4xl sm:text-5xl text-white mt-3 max-w-xl leading-tight">Un proceso técnico, no una promesa de marketing.</h2>
@@ -144,19 +147,19 @@
 </section>
 
 <!-- PROJECTS: full-width alternating rows, no overlapping caption card -->
-<section class="bg-brand-bg py-24">
+<section class="bg-brand-bg py-28">
   <div class="mx-auto max-w-6xl px-5 md:px-8">
-    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-14">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
       <h2 class="font-heading font-black text-4xl sm:text-5xl text-brand-bluedark">Obras que hablan por nosotros.</h2>
       <a href="proyectos.html" class="btn-press inline-flex items-center text-brand-bluedark text-sm font-bold uppercase tracking-wide border-b-2 border-brand-bluedark/40 pb-1 hover:border-brand-bluedark transition-colors self-start">Ver portafolio completo</a>
     </div>
 
-    <article class="project-card reveal grid md:grid-cols-2 gap-8 items-center mb-16 cursor-pointer"
+    <article class="project-card reveal grid md:grid-cols-[7fr_5fr] gap-10 items-center mb-20 cursor-pointer"
       data-img="assets/generated/project-1-planta.png"
       data-category="Tratamiento de aguas" data-title="Planta de Tratamiento de Aguas Residuales"
       data-desc="Diseño y ejecución de una planta de tratamiento de aguas residuales para el municipio."
       data-scope="Diseño, construcción y puesta en marcha del sistema de tratamiento." data-location="Municipio Santo Domingo Norte — Santo Domingo, R.D.">
-      <div class="overflow-hidden"><img src="assets/generated/project-1-planta.png" alt="Planta de Tratamiento de Aguas Residuales" loading="lazy" class="w-full h-72 md:h-80 object-cover"></div>
+      <div class="overflow-hidden"><img src="assets/generated/project-1-planta.png" alt="Planta de Tratamiento de Aguas Residuales" loading="lazy" class="w-full h-80 md:h-[440px] object-cover"></div>
       <div>
         <span class="text-xs uppercase tracking-widest text-brand-blue font-bold">Tratamiento de aguas</span>
         <h3 class="font-heading font-extrabold text-2xl text-brand-bluedark mt-2 mb-3">Infraestructura de saneamiento</h3>
@@ -165,12 +168,12 @@
       </div>
     </article>
 
-    <article class="project-card reveal grid md:grid-cols-2 gap-8 items-center mb-16 cursor-pointer"
+    <article class="project-card reveal grid md:grid-cols-[5fr_7fr] gap-10 items-center mb-20 cursor-pointer"
       data-img="assets/generated/project-2-inundaciones.png"
       data-category="Redes sanitarias" data-title="Redes e Infraestructura Hidráulica"
       data-desc="Excavación, instalación, adecuación y rehabilitación de sistemas de conducción."
       data-scope="Instalación y rehabilitación de redes de conducción sanitaria e hidráulica." data-location="República Dominicana">
-      <div class="overflow-hidden md:order-2"><img src="assets/generated/project-2-inundaciones.png" alt="Redes e infraestructura hidráulica" loading="lazy" class="w-full h-72 md:h-80 object-cover"></div>
+      <div class="overflow-hidden md:order-2"><img src="assets/generated/project-2-inundaciones.png" alt="Redes e infraestructura hidráulica" loading="lazy" class="w-full h-80 md:h-[440px] object-cover"></div>
       <div class="md:order-1">
         <span class="text-xs uppercase tracking-widest text-brand-blue font-bold">Redes sanitarias</span>
         <h3 class="font-heading font-extrabold text-2xl text-brand-bluedark mt-2 mb-3">Infraestructura hidráulica</h3>
@@ -184,7 +187,7 @@
       data-category="Construcción" data-title="Colector Sanitario"
       data-desc="Instalación de colector sanitario para ampliar la cobertura de la red de alcantarillado."
       data-scope="Excavación, tendido de tubería e interconexión con la red existente." data-location="Avenida Ecológica — Santo Domingo, R.D.">
-      <div class="overflow-hidden"><img src="assets/generated/project-3-colector.png" alt="Colector Sanitario" loading="lazy" class="w-full h-80 md:h-[420px] object-cover"></div>
+      <div class="overflow-hidden"><img src="assets/generated/project-3-colector.png" alt="Colector Sanitario" loading="lazy" class="w-full h-80 md:h-[520px] object-cover"></div>
       <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mt-6">
         <div>
           <span class="text-xs uppercase tracking-widest text-brand-blue font-bold">Construcción</span>
