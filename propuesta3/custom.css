@@ -1,0 +1,25 @@
+/* SOLSANIT — small set of things Tailwind utilities can't express cleanly */
+
+.watermark{
+  position:absolute;left:50%;bottom:-0.14em;transform:translateX(-50%);
+  font-family:"Roboto Serif",Georgia,serif;
+  font-size:clamp(90px,14vw,220px);
+  font-weight:700;
+  line-height:1;
+  color:transparent;
+  -webkit-text-stroke:1px rgba(255,255,255,.10);
+  white-space:nowrap;
+  pointer-events:none;
+  user-select:none;
+}
+
+.word-cycle{position:relative;display:inline-block}
+.word-cycle span{
+  position:absolute;left:0;top:0;white-space:nowrap;
+  opacity:0;transition:opacity .4s ease;
+}
+.word-cycle span.is-active{position:relative;opacity:1}
+
+@media (prefers-reduced-motion:reduce){
+  .word-cycle span{transition:none}
+}
