@@ -51,15 +51,20 @@
 
 <main id="main">
 
-<!-- HERO: full-bleed photo, plain overlay, no card, no badge -->
-<section class="relative min-h-[72vh] flex items-end text-white" style="background:linear-gradient(180deg,rgba(7,27,61,.35) 0%,rgba(7,27,61,.86) 88%),url('assets/generated/hero-plant.png') center/cover">
-  <div class="mx-auto max-w-6xl px-5 md:px-8 pb-16 pt-24 w-full">
-    <h1 class="font-heading font-black text-[38px] leading-[1.05] sm:text-6xl sm:leading-[1.02] max-w-3xl">Infraestructura sanitaria e hidráulica construida para durar.</h1>
-    <p class="text-slate-200 mt-6 max-w-xl text-lg">Desde 2006 diseñamos, construimos y mantenemos la infraestructura de saneamiento ambiental, redes hidráulicas y obra civil que República Dominicana necesita para funcionar. Veinte años después, en 2026, seguimos en el terreno.</p>
-    <div class="flex flex-wrap gap-6 mt-9 items-center">
-      <a href="proyectos.html" class="btn-press inline-flex items-center bg-brand-green text-white text-sm font-bold uppercase tracking-wide px-7 py-4 hover:bg-brand-greendark transition-colors">Ver proyectos</a>
-      <a href="contacto.html" class="btn-press inline-flex items-center text-white text-sm font-bold uppercase tracking-wide border-b-2 border-white/60 pb-1 hover:border-white transition-colors">Conversemos</a>
+<!-- HERO: split panel, undimmed photo — no dark overlay, no bold-headline-on-photo formula -->
+<section class="grid md:grid-cols-2">
+  <div class="bg-brand-navy text-white flex items-center px-5 md:px-12 py-16 md:py-24">
+    <div class="max-w-xl">
+      <h1 class="font-heading font-black text-[38px] leading-[1.05] sm:text-5xl sm:leading-[1.05]">Infraestructura sanitaria e hidráulica construida para durar.</h1>
+      <p class="text-slate-300 mt-6 text-lg">Desde 2006 diseñamos, construimos y mantenemos la infraestructura de saneamiento ambiental, redes hidráulicas y obra civil que República Dominicana necesita para funcionar. Veinte años después, en 2026, seguimos en el terreno.</p>
+      <div class="flex flex-wrap gap-6 mt-9 items-center">
+        <a href="proyectos.html" class="btn-press inline-flex items-center bg-brand-green text-white text-sm font-bold uppercase tracking-wide px-7 py-4 hover:bg-brand-greendark transition-colors">Ver proyectos</a>
+        <a href="contacto.html" class="btn-press inline-flex items-center text-white text-sm font-bold uppercase tracking-wide border-b-2 border-white/60 pb-1 hover:border-white transition-colors">Conversemos</a>
+      </div>
     </div>
+  </div>
+  <div class="min-h-[280px] md:min-h-0">
+    <img src="assets/generated/hero-plant.png" alt="Planta de tratamiento de SOLSANIT" class="w-full h-full object-cover">
   </div>
 </section>
 
