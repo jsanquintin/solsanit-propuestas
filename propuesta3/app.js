@@ -4,21 +4,26 @@ const preferredDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme:
 const initialTheme=savedTheme||(preferredDark?'dark':'light');
 root.dataset.theme=initialTheme;
 
-const LIGHT_LOGO='logo-solsanit-light-crisp.svg?v=10';
-const DARK_LOGO='logo-solsanit-dark-crisp.svg?v=10';
-const logo=document.querySelector('.brand img');
-const syncLogo=()=>{
-  if(!logo) return;
-  const dark=root.dataset.theme==='dark';
-  const nextSrc=dark?DARK_LOGO:LIGHT_LOGO;
-  if(!logo.src.endsWith(nextSrc)) logo.src=nextSrc;
-  logo.width=810;
-  logo.height=227;
-};
-syncLogo();
+const brand=document.querySelector('.brand');
+if(brand){
+  brand.innerHTML=`
+    <span class="brand-symbol" aria-hidden="true">
+      <img src="logo-solsanit-vector-final.svg?v=11" alt="">
+    </span>
+    <span class="brand-copy">
+      <span class="brand-name">SOLSANIT</span>
+      <span class="brand-tagline">Ingeniería para un mejor entorno.</span>
+    </span>`;
+}
 
 const themeStyles=document.createElement('style');
 themeStyles.textContent=`
+.brand{display:flex;align-items:center;gap:10px;width:300px;height:72px;flex:0 0 300px;overflow:visible}
+.brand-symbol{display:block;width:64px;height:64px;flex:0 0 64px;overflow:hidden}
+.brand-symbol img{display:block;height:64px;width:auto;max-width:none;max-height:none;object-fit:initial;object-position:initial}
+.brand-copy{display:flex;flex-direction:column;justify-content:center;min-width:0}
+.brand-name{font-family:"Arial Black",Arial,Helvetica,sans-serif;font-size:32px;font-weight:900;letter-spacing:-1.3px;line-height:.9;color:#0A3DA7;white-space:nowrap;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
+.brand-tagline{font-family:Arial,Helvetica,sans-serif;font-size:11.5px;font-weight:500;line-height:1.1;color:#0A3DA7;white-space:nowrap;margin-top:5px;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
 .theme-toggle{width:44px;height:44px;flex:0 0 44px;border-radius:50%;border:1px solid rgba(8,47,117,.16);background:#f4f8fb;color:#082F75;display:grid;place-items:center;font-size:19px;cursor:pointer;transition:.25s;box-shadow:0 6px 18px rgba(8,47,117,.08)}
 .theme-toggle:hover{transform:translateY(-2px);border-color:#47B649;box-shadow:0 10px 24px rgba(71,182,73,.16)}
 html[data-theme='light']{color-scheme:light}
@@ -43,6 +48,7 @@ html[data-theme='light'] .theme-toggle{background:#F4F8FB;color:#082F75;border-c
 html[data-theme='dark'] body{background:#061F4B;color:#EEF5FB}
 html[data-theme='dark'] .top{background:#051A40;border-color:rgba(255,255,255,.10);box-shadow:0 8px 24px rgba(0,0,0,.18)}
 html[data-theme='dark'] .brand{background:transparent;padding:0;border-radius:0;box-shadow:none}
+html[data-theme='dark'] .brand-name,html[data-theme='dark'] .brand-tagline{color:#fff}
 html[data-theme='dark'] .menu{color:#E7F0FC}
 html[data-theme='dark'] .menu a:hover,html[data-theme='dark'] .menu a.active{color:#fff}
 html[data-theme='dark'] .section{background:#061F4B;color:#EEF5FB}
@@ -60,7 +66,9 @@ html[data-theme='dark'] .form input,html[data-theme='dark'] .form textarea,html[
 html[data-theme='dark'] .footer{background:#041A40;color:#D5E1EF;border-color:rgba(255,255,255,.10)}
 html[data-theme='dark'] .footer strong{color:#fff}
 html[data-theme='dark'] .theme-toggle{background:#0A347D;color:#fff;border-color:rgba(255,255,255,.16)}
+@media(max-width:1080px){.brand{width:245px;height:58px;flex-basis:245px;gap:8px}.brand-symbol{width:50px;height:50px;flex-basis:50px}.brand-symbol img{height:50px}.brand-name{font-size:25px;letter-spacing:-1px}.brand-tagline{font-size:9.5px;margin-top:4px}}
 @media(max-width:900px){html[data-theme='dark'] .menu{background:#051A40;border-color:rgba(255,255,255,.10)}.theme-toggle{width:40px;height:40px;flex-basis:40px;font-size:17px}}
+@media(max-width:520px){.brand{width:205px;flex-basis:205px}.brand-symbol{width:44px;height:44px;flex-basis:44px}.brand-symbol img{height:44px}.brand-name{font-size:22px}.brand-tagline{font-size:8.5px}.theme-toggle{width:36px;height:36px;flex-basis:36px;font-size:16px}}
 `;
 document.head.appendChild(themeStyles);
 
@@ -75,7 +83,6 @@ if(nav){
     themeButton.textContent=dark?'☀':'☾';
     themeButton.setAttribute('aria-label',dark?'Cambiar a modo claro':'Cambiar a modo oscuro');
     themeButton.title=dark?'Modo claro':'Modo oscuro';
-    syncLogo();
   };
   syncThemeButton();
   themeButton.addEventListener('click',()=>{
