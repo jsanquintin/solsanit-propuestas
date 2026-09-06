@@ -10,7 +10,11 @@ html,body{max-width:100%;overflow-x:hidden}
 }
 
 @media (max-width:900px){
-  .menu{display:none}
+  .menu{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);box-shadow:0 16px 32px rgba(7,27,61,.1);padding:8px max(20px,5vw) 16px}
+  .menu.open{display:flex}
+  .menu a{padding:14px 0;font-size:15px}
+  .menu a:after{display:none}
+  .nav{position:relative}
   .mobile-toggle{display:flex}
   .cta-btn{display:none}
   .stats .wrap{grid-template-columns:repeat(2,1fr)}
@@ -41,5 +45,6 @@ html,body{max-width:100%;overflow-x:hidden}
   .stats .wrap{grid-template-columns:1fr}
   .stat{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
   .stat:last-child{border-bottom:none}
-  .foot-wrap{flex-direction:column;text-align:center}
+  .foot-wrap{flex-direction:column;text-align:center;align-items:center}
+  .foot-meta{text-align:center;align-items:center}
 }

@@ -9,9 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="responsive.css?v=2">
+<link rel="stylesheet" href="responsive.css?v=3">
 </head>
 <body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
 <header class="top">
   <div class="wrap nav">
@@ -32,14 +33,13 @@
       <a href="proyectos.html">Proyectos</a>
       <a class="active" href="contacto.html">Contacto</a>
     </nav>
-    <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false"></button>
+    <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <a class="cta-btn" href="contacto.html">Cotizar proyecto</a>
   </div>
 </header>
 
-<section class="pagehero" style="--hero-img:url('https://www.solsanit.com/wp-content/uploads/2015/10/slide05.jpg')">
+<section class="pagehero" id="main" style="--hero-img:url('https://www.solsanit.com/wp-content/uploads/2015/10/slide05.jpg')">
   <div class="wrap">
-    <p class="eyebrow">Hablemos</p>
     <h1>Construyamos el próximo proyecto.</h1>
     <p>Cuéntanos qué necesitas y coordinamos una conversación con el equipo de SOLSANIT.</p>
   </div>
@@ -48,8 +48,7 @@
 <section class="section">
   <div class="wrap contact-grid">
     <div class="contact-info">
-      <p class="eyebrow">Contacto directo</p>
-      <h2 style="margin:8px 0 20px">Una conversación puede ser el inicio.</h2>
+      <h2 style="margin:0 0 20px">Una conversación puede ser el inicio.</h2>
       <p><strong>Santo Domingo, República Dominicana</strong></p>
       <p>info@solsanit.com</p>
       <p>Lunes a viernes · 8:00 a.m. – 5:00 p.m.</p>
@@ -73,14 +72,13 @@
       </select>
       <label class="visually-hidden" for="cf-message">Describe brevemente tu proyecto</label>
       <textarea id="cf-message" name="message" placeholder="Describe brevemente tu proyecto" required></textarea>
-      <button type="submit" class="btn primary">Enviar mensaje →</button>
+      <button type="submit" class="btn primary">Enviar mensaje</button>
     </form>
   </div>
 </section>
 
 <section class="section tint">
   <div class="wrap" style="max-width:720px">
-    <p class="eyebrow">Próximo paso</p>
     <h2>Convirtamos una necesidad en una solución.</h2>
     <p style="color:var(--muted);font-size:15.5px;margin-top:14px">Una página de contacto clara y visible reduce fricción y facilita que nuevos clientes lleguen con información suficiente para iniciar una conversación comercial.</p>
   </div>
@@ -88,8 +86,13 @@
 
 <footer>
   <div class="wrap foot-wrap">
-    <span class="foot-brand">SOLSANIT · Ingeniería para un mejor entorno</span>
-    <span class="foot-meta">República Dominicana</span>
+    <div class="foot-brand-block">
+      <span class="foot-brand">SOLSANIT</span>
+      <span class="foot-tag">Ingeniería para un mejor entorno</span>
+    </div>
+    <div class="foot-meta">
+      <span>República Dominicana</span>
+    </div>
   </div>
 </footer>
 

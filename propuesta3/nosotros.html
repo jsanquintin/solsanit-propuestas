@@ -9,9 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="responsive.css?v=2">
+<link rel="stylesheet" href="responsive.css?v=3">
 </head>
 <body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
 <header class="top">
   <div class="wrap nav">
@@ -32,14 +33,13 @@
       <a href="proyectos.html">Proyectos</a>
       <a href="contacto.html">Contacto</a>
     </nav>
-    <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false"></button>
+    <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <a class="cta-btn" href="contacto.html">Cotizar proyecto</a>
   </div>
 </header>
 
-<section class="pagehero" style="--hero-img:url('https://www.solsanit.com/wp-content/uploads/2015/10/slide05.jpg')">
+<section class="pagehero" id="main" style="--hero-img:url('https://www.solsanit.com/wp-content/uploads/2015/10/slide05.jpg')">
   <div class="wrap">
-    <p class="eyebrow">Quiénes somos</p>
     <h1>20 años construyendo soluciones.</h1>
     <p>Desde 2006, SOLSANIT desarrolla proyectos de saneamiento ambiental, ingeniería sanitaria e hidráulica, construcción y remodelación en República Dominicana.</p>
   </div>
@@ -49,24 +49,23 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <p class="eyebrow">Nuestra trayectoria</p>
         <h2>Experiencia técnica con propósito.</h2>
       </div>
       <p>Una empresa con dos décadas de experiencia necesita una presencia digital que refleje capacidad, confianza y visión de largo plazo.</p>
     </div>
     <div class="valuegrid">
       <div class="tile">
-        <div class="tile-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9-9.5C1.5 7 4 4 7 4c2 0 4 1 5 3 1-2 3-3 5-3 3 0 5.5 3 4 7.5-2 5-9 9.5-9 9.5Z"/></svg></div>
+        <div class="tile-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-4.5-9-9.5C1.5 7 4 4 7 4c2 0 4 1 5 3 1-2 3-3 5-3 3 0 5.5 3 4 7.5-2 5-9 9.5-9 9.5Z"/></svg></div>
         <h3>Misión</h3>
         <p>Crear soluciones que mejoren la calidad de vida y protejan el medio ambiente.</p>
       </div>
       <div class="tile">
-        <div class="tile-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/></svg></div>
+        <div class="tile-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-6.5 10-6.5S22 12 22 12s-3.5 6.5-10 6.5S2 12 2 12Z"/></svg></div>
         <h3>Visión</h3>
         <p>Posicionarnos como una firma destacada en saneamiento e infraestructura.</p>
       </div>
       <div class="tile">
-        <div class="tile-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <div class="tile-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg></div>
         <h3>Valores</h3>
         <p>Compromiso, calidad, responsabilidad ambiental, trabajo en equipo e innovación.</p>
       </div>
@@ -77,9 +76,8 @@
 <section class="section tint">
   <div class="wrap purpose">
     <div class="copy">
-      <p class="eyebrow">Desde 2006</p>
       <h2>Una historia vinculada al desarrollo.</h2>
-      <p>SOLSANIT nace para responder a necesidades de saneamiento, infraestructura sanitaria, construcción y soluciones hidráulicas, combinando ejecución en campo con criterio técnico.</p>
+      <p>Desde 2006, SOLSANIT nace para responder a necesidades de saneamiento, infraestructura sanitaria, construcción y soluciones hidráulicas, combinando ejecución en campo con criterio técnico.</p>
       <a class="btn primary" style="margin-top:8px" href="proyectos.html">Ver experiencia en proyectos</a>
     </div>
     <img src="https://www.solsanit.com/wp-content/uploads/2015/10/slide03.jpg" alt="Proyecto de infraestructura de SOLSANIT" loading="lazy" decoding="async">
@@ -88,8 +86,14 @@
 
 <footer>
   <div class="wrap foot-wrap">
-    <span class="foot-brand">SOLSANIT · Ingeniería para un mejor entorno</span>
-    <span class="foot-meta">República Dominicana · info@solsanit.com</span>
+    <div class="foot-brand-block">
+      <span class="foot-brand">SOLSANIT</span>
+      <span class="foot-tag">Ingeniería para un mejor entorno</span>
+    </div>
+    <div class="foot-meta">
+      <span>República Dominicana</span>
+      <span>info@solsanit.com</span>
+    </div>
   </div>
 </footer>
 

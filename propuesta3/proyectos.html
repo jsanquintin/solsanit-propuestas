@@ -9,9 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="responsive.css?v=2">
+<link rel="stylesheet" href="responsive.css?v=3">
 </head>
 <body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
 
 <header class="top">
   <div class="wrap nav">
@@ -32,14 +33,13 @@
       <a class="active" href="proyectos.html">Proyectos</a>
       <a href="contacto.html">Contacto</a>
     </nav>
-    <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false"></button>
+    <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
     <a class="cta-btn" href="contacto.html">Cotizar proyecto</a>
   </div>
 </header>
 
-<section class="pagehero" style="--hero-img:url('https://www.solsanit.com/wp-content/uploads/2015/10/slide03.jpg')">
+<section class="pagehero" id="main" style="--hero-img:url('https://www.solsanit.com/wp-content/uploads/2015/10/slide03.jpg')">
   <div class="wrap">
-    <p class="eyebrow">Portafolio</p>
     <h1>Obras reales. Impacto real.</h1>
     <p>Una presentación más visual de la experiencia de SOLSANIT, organizada por tipo de proyecto y área técnica.</p>
   </div>
@@ -49,7 +49,6 @@
   <div class="wrap">
     <div class="section-head">
       <div>
-        <p class="eyebrow">Experiencia en campo</p>
         <h2>Proyectos que demuestran capacidad.</h2>
       </div>
       <p>La web convierte los proyectos ejecutados en evidencia clara de experiencia, alcance y especialización.</p>
@@ -85,7 +84,6 @@
 
 <section class="section tint">
   <div class="wrap" style="max-width:760px">
-    <p class="eyebrow">Cómo se mostrarán</p>
     <h2>Cada proyecto contará mejor su historia.</h2>
     <p style="color:var(--muted);font-size:15.5px;margin-top:14px">La propuesta contempla fichas de proyecto con fotografías, servicio realizado, ubicación, alcance, descripción técnica y resultados, siempre utilizando información validada por SOLSANIT.</p>
     <div class="btnrow">
@@ -96,8 +94,13 @@
 
 <footer>
   <div class="wrap foot-wrap">
-    <span class="foot-brand">SOLSANIT · Ingeniería para un mejor entorno</span>
-    <span class="foot-meta">Infraestructura que deja huella</span>
+    <div class="foot-brand-block">
+      <span class="foot-brand">SOLSANIT</span>
+      <span class="foot-tag">Ingeniería para un mejor entorno</span>
+    </div>
+    <div class="foot-meta">
+      <span>Infraestructura que deja huella</span>
+    </div>
   </div>
 </footer>
 
