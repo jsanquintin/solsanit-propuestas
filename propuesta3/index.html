@@ -51,20 +51,21 @@
 
 <main id="main">
 
-<!-- HERO: split panel, undimmed photo — no dark overlay, no bold-headline-on-photo formula -->
-<section class="grid md:grid-cols-2">
-  <div class="bg-brand-navy text-white flex items-center px-5 md:px-12 py-16 md:py-24">
-    <div class="max-w-xl">
-      <h1 class="font-heading font-black text-[38px] leading-[1.05] sm:text-5xl sm:leading-[1.05]">Infraestructura sanitaria e hidráulica construida para durar.</h1>
-      <p class="text-slate-300 mt-6 text-lg">Desde 2006 diseñamos, construimos y mantenemos la infraestructura de saneamiento ambiental, redes hidráulicas y obra civil que República Dominicana necesita para funcionar. Veinte años después, en 2026, seguimos en el terreno.</p>
-      <div class="flex flex-wrap gap-6 mt-9 items-center">
-        <a href="proyectos.html" class="btn-press inline-flex items-center bg-white text-brand-navy text-sm font-bold uppercase tracking-wide px-7 py-4 hover:bg-slate-200 transition-colors">Ver proyectos</a>
-        <a href="contacto.html" class="btn-press inline-flex items-center text-white text-sm font-bold uppercase tracking-wide border-b-2 border-white/60 pb-1 hover:border-white transition-colors">Conversemos</a>
-      </div>
+<!-- HERO: full-bleed photo dominates, text anchored bottom-left with a scrim only behind it — not a full dark overlay -->
+<section class="relative min-h-[88vh] flex items-end text-white overflow-hidden">
+  <img src="assets/generated/hero-plant.png" alt="Planta de tratamiento de SOLSANIT" class="absolute inset-0 w-full h-full object-cover">
+  <div class="absolute inset-0" style="background:linear-gradient(0deg, rgba(7,27,61,.92) 0%, rgba(7,27,61,.72) 38%, rgba(7,27,61,.15) 68%, rgba(7,27,61,0) 85%)"></div>
+  <div class="relative mx-auto max-w-6xl px-5 md:px-8 pb-16 pt-24 w-full">
+    <h1 class="font-heading font-black text-[34px] leading-[1.08] sm:text-5xl sm:leading-[1.05] max-w-2xl">Infraestructura sanitaria e hidráulica construida para durar.</h1>
+    <p class="text-slate-200 mt-5 max-w-lg text-lg">Desde 2006 diseñamos, construimos y mantenemos la infraestructura de saneamiento ambiental, redes hidráulicas y obra civil que República Dominicana necesita para funcionar. Veinte años después, en 2026, seguimos en el terreno.</p>
+    <div class="flex flex-wrap gap-6 mt-8 items-center">
+      <a href="proyectos.html" class="btn-press inline-flex items-center bg-white text-brand-navy text-sm font-bold uppercase tracking-wide px-7 py-4 hover:bg-slate-200 transition-colors">Ver proyectos</a>
+      <a href="contacto.html" class="btn-press inline-flex items-center text-white text-sm font-bold uppercase tracking-wide border-b-2 border-white/60 pb-1 hover:border-white transition-colors">Conversemos</a>
     </div>
   </div>
-  <div class="min-h-[280px] md:min-h-0">
-    <img src="assets/generated/hero-plant.png" alt="Planta de tratamiento de SOLSANIT" class="w-full h-full object-cover">
+  <div class="hero-scroll-cue" aria-hidden="true">
+    <span>Descubre más</span>
+    <span class="hero-scroll-cue-dot"></span>
   </div>
 </section>
 
@@ -189,9 +190,13 @@
   </div>
 </section>
 
-<!-- CTA BAND: plain, one button, no icon circle, no wave -->
-<section class="bg-brand-navy">
-  <div class="mx-auto max-w-6xl px-5 md:px-8 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
+<!-- CTA BAND: giant translucent brand mark as the section's graphic signature, not an icon or wave -->
+<section class="bg-brand-navy relative overflow-hidden">
+  <svg viewBox="0 0 227 227" class="absolute -right-20 -top-28 w-[420px] sm:w-[560px] h-auto opacity-[0.08] pointer-events-none" aria-hidden="true">
+    <path transform="translate(-1,-13)" d="M 175 90 L 166 85 L 147 78 L 137 76 L 120 76 L 102 82 L 93 88 L 85 96 L 84 99 L 87 101 L 104 107 L 127 113 L 144 120 L 155 130 L 160 141 L 160 154 L 157 164 L 149 177 L 142 185 L 129 196 L 116 204 L 100 210 L 93 211 L 100 213 L 121 213 L 122 212 L 133 211 L 146 207 L 163 199 L 172 193 L 191 174 L 195 168 L 203 150 L 204 129 L 201 118 L 196 109 L 185 97 Z M 127 16 L 122 15 L 99 15 L 98 16 L 88 17 L 71 23 L 59 29 L 43 41 L 27 60 L 21 72 L 17 90 L 18 101 L 21 111 L 29 124 L 41 136 L 56 146 L 80 154 L 100 154 L 116 148 L 124 142 L 132 133 L 130 130 L 123 127 L 94 118 L 91 118 L 74 111 L 63 101 L 59 93 L 58 88 L 58 77 L 61 67 L 66 57 L 72 49 L 83 38 L 94 30 L 112 21 L 128 17 Z" fill="#fff"/>
+    <path transform="translate(-1,-13)" d="M 14 124 L 15 138 L 20 156 L 30 174 L 40 186 L 50 194 L 63 201 L 66 201 L 69 203 L 77 205 L 100 204 L 106 201 L 109 201 L 126 191 L 133 185 L 145 169 L 151 153 L 151 148 L 152 147 L 152 136 L 151 134 L 142 147 L 133 156 L 123 163 L 113 168 L 99 171 L 75 170 L 57 164 L 51 160 L 49 160 L 35 150 L 21 135 L 15 124 Z M 65 82 L 65 93 L 66 94 L 76 80 L 92 67 L 105 61 L 116 59 L 120 57 L 137 57 L 152 60 L 174 69 L 191 81 L 207 100 L 207 89 L 205 79 L 203 76 L 201 68 L 191 51 L 184 43 L 171 33 L 159 27 L 144 23 L 127 23 L 115 26 L 93 38 L 81 49 L 73 60 L 67 73 Z" fill="#fff"/>
+  </svg>
+  <div class="relative mx-auto max-w-6xl px-5 md:px-8 py-16 flex flex-col md:flex-row items-center justify-between gap-8">
     <h2 class="font-heading font-black text-3xl sm:text-4xl text-white max-w-md">¿Tiene un proyecto sanitario o hidráulico? Conversemos.</h2>
     <a href="contacto.html" class="btn-press inline-flex items-center bg-brand-green text-white text-sm font-bold uppercase tracking-wide px-7 py-4 hover:bg-brand-greendark transition-colors whitespace-nowrap">Conversemos</a>
   </div>
