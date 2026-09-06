@@ -23,3 +23,67 @@
 @media (prefers-reduced-motion:reduce){
   .word-cycle span{transition:none}
 }
+
+/* ---- motion tokens (Emil Kowalski: custom curves, not the weak CSS defaults) ---- */
+:root{
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* ---- scroll-triggered entrance: fade + rise, never from scale(0)/opacity alone ---- */
+.reveal{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity 550ms var(--ease-out), transform 550ms var(--ease-out);
+  transition-delay:var(--reveal-delay, 0ms);
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
+/* ---- pressable feedback: every real button/link-button gets a squeeze ---- */
+.btn-press{transition:transform 160ms var(--ease-out)}
+.btn-press:active{transform:scale(0.97)}
+
+/* ---- portfolio card: image zoom + caption lift, gated to real hover devices ---- */
+@media (hover:hover) and (pointer:fine){
+  .project-card img{transition:transform 450ms var(--ease-out)}
+  .project-card:hover img{transform:scale(1.045)}
+  .project-card .project-caption{transition:transform 300ms var(--ease-out)}
+  .project-card:hover .project-caption{transform:translateY(-2px)}
+}
+.project-card{cursor:pointer}
+.project-card:focus-visible{outline:2px solid #0A3DA7;outline-offset:2px}
+
+/* ---- modal: backdrop fade + panel scale-from-0.95, centered (never anchored) ---- */
+.modal-backdrop{
+  position:fixed;inset:0;background:rgba(7,27,61,.65);
+  opacity:0;visibility:hidden;
+  transition:opacity 260ms ease, visibility 0s linear 260ms;
+  z-index:100;
+}
+.modal-backdrop[data-state="open"]{
+  opacity:1;visibility:visible;
+  transition:opacity 260ms ease, visibility 0s linear 0s;
+}
+.modal-panel{
+  transform-origin:center;
+  transform:scale(0.95) translateY(8px);
+  opacity:0;
+  transition:transform 260ms var(--ease-out), opacity 220ms var(--ease-out);
+}
+.modal-backdrop[data-state="open"] .modal-panel{
+  transform:scale(1) translateY(0);
+  opacity:1;
+}
+/* exit is snappier than enter */
+.modal-backdrop[data-closing="true"]{transition:opacity 180ms ease, visibility 0s linear 180ms}
+.modal-backdrop[data-closing="true"] .modal-panel{transition:transform 180ms ease, opacity 150ms ease}
+
+@media (prefers-reduced-motion:reduce){
+  .modal-backdrop, .modal-panel{transition:opacity 150ms ease !important;transform:none !important}
+}
