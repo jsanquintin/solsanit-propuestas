@@ -1,76 +1,9 @@
 const root=document.documentElement;
-const savedTheme=localStorage.getItem('solsanit-theme');
-const preferredDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
-const initialTheme=savedTheme||(preferredDark?'dark':'light');
-root.dataset.theme=initialTheme;
 
-const brand=document.querySelector('.brand');
-if(brand){
-  brand.innerHTML=`
-    <span class="brand-symbol" aria-hidden="true">
-      <img src="logo-solsanit-vector-final.svg?v=11" alt="">
-    </span>
-    <span class="brand-copy">
-      <span class="brand-name">SOLSANIT</span>
-      <span class="brand-tagline">Ingeniería para un mejor entorno.</span>
-    </span>`;
-}
-
-const themeStyles=document.createElement('style');
-themeStyles.textContent=`
-.brand{display:flex;align-items:center;gap:10px;width:300px;height:72px;flex:0 0 300px;overflow:visible}
-.brand-symbol{display:block;width:64px;height:64px;flex:0 0 64px;overflow:hidden}
-.brand-symbol img{display:block;height:64px;width:auto;max-width:none;max-height:none;object-fit:initial;object-position:initial}
-.brand-copy{display:flex;flex-direction:column;justify-content:center;min-width:0}
-.brand-name{font-family:"Arial Black",Arial,Helvetica,sans-serif;font-size:32px;font-weight:900;letter-spacing:-1.3px;line-height:.9;color:#0A3DA7;white-space:nowrap;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
-.brand-tagline{font-family:Arial,Helvetica,sans-serif;font-size:11.5px;font-weight:500;line-height:1.1;color:#0A3DA7;white-space:nowrap;margin-top:5px;-webkit-font-smoothing:antialiased;text-rendering:geometricPrecision}
-.theme-toggle{width:44px;height:44px;flex:0 0 44px;border-radius:50%;border:1px solid rgba(8,47,117,.16);background:#f4f8fb;color:#082F75;display:grid;place-items:center;font-size:19px;cursor:pointer;transition:.25s;box-shadow:0 6px 18px rgba(8,47,117,.08)}
-.theme-toggle:hover{transform:translateY(-2px);border-color:#47B649;box-shadow:0 10px 24px rgba(71,182,73,.16)}
-html[data-theme='light']{color-scheme:light}
-html[data-theme='dark']{color-scheme:dark}
-html[data-theme='light'] body{background:#F5F9FC;color:#16355A}
-html[data-theme='light'] .top{background:#fff;border-color:#DCE7F0}
-html[data-theme='light'] .menu{color:#082F75}
-html[data-theme='light'] .section{background:#F5F9FC;color:#16355A}
-html[data-theme='light'] .section.white{background:#fff;color:#16355A}
-html[data-theme='light'] .section.white h2{color:#082F75}
-html[data-theme='light'] .tile{background:#fff;border-color:#DCE7F0}
-html[data-theme='light'] .tile h3{color:#082F75}
-html[data-theme='light'] .tile p{color:#587089}
-html[data-theme='light'] .card{background:#fff;border-color:#DCE7F0;box-shadow:0 14px 30px rgba(8,47,117,.08)}
-html[data-theme='light'] .card h3{color:#082F75}
-html[data-theme='light'] .card p{color:#60758B}
-html[data-theme='light'] .form{background:#fff;border-color:#DCE7F0;box-shadow:0 18px 44px rgba(8,47,117,.10)}
-html[data-theme='light'] .form input,html[data-theme='light'] .form textarea,html[data-theme='light'] .form select{background:#F7FAFC;color:#16355A;border-color:#D5E1EC}
-html[data-theme='light'] .footer{background:#fff;color:#60758B;border-color:#DCE7F0}
-html[data-theme='light'] .footer strong{color:#082F75}
-html[data-theme='light'] .theme-toggle{background:#F4F8FB;color:#082F75;border-color:#D8E3ED}
-html[data-theme='dark'] body{background:#061F4B;color:#EEF5FB}
-html[data-theme='dark'] .top{background:#051A40;border-color:rgba(255,255,255,.10);box-shadow:0 8px 24px rgba(0,0,0,.18)}
-html[data-theme='dark'] .brand{background:transparent;padding:0;border-radius:0;box-shadow:none}
-html[data-theme='dark'] .brand-name,html[data-theme='dark'] .brand-tagline{color:#fff}
-html[data-theme='dark'] .menu{color:#E7F0FC}
-html[data-theme='dark'] .menu a:hover,html[data-theme='dark'] .menu a.active{color:#fff}
-html[data-theme='dark'] .section{background:#061F4B;color:#EEF5FB}
-html[data-theme='dark'] .section.white{background:#082F75;color:#EEF5FB}
-html[data-theme='dark'] .section.white h2{color:#fff}
-html[data-theme='dark'] .tile{background:#0A347D;border-color:rgba(255,255,255,.10);box-shadow:0 14px 30px rgba(0,0,0,.16)}
-html[data-theme='dark'] .tile h3{color:#fff}
-html[data-theme='dark'] .tile p{color:#DCE7F5}
-html[data-theme='dark'] .tile .num{color:#65D06A}
-html[data-theme='dark'] .card,html[data-theme='dark'] .white .card{background:#0A347D;border-color:rgba(255,255,255,.10);box-shadow:0 14px 30px rgba(0,0,0,.18)}
-html[data-theme='dark'] .card h3,html[data-theme='dark'] .white .card h3{color:#fff}
-html[data-theme='dark'] .card p,html[data-theme='dark'] .white .card p{color:#DCE7F5}
-html[data-theme='dark'] .form{background:#082F75;border-color:rgba(255,255,255,.10)}
-html[data-theme='dark'] .form input,html[data-theme='dark'] .form textarea,html[data-theme='dark'] .form select{background:#061F4B;color:#fff;border-color:rgba(255,255,255,.16)}
-html[data-theme='dark'] .footer{background:#041A40;color:#D5E1EF;border-color:rgba(255,255,255,.10)}
-html[data-theme='dark'] .footer strong{color:#fff}
-html[data-theme='dark'] .theme-toggle{background:#0A347D;color:#fff;border-color:rgba(255,255,255,.16)}
-@media(max-width:1080px){.brand{width:245px;height:58px;flex-basis:245px;gap:8px}.brand-symbol{width:50px;height:50px;flex-basis:50px}.brand-symbol img{height:50px}.brand-name{font-size:25px;letter-spacing:-1px}.brand-tagline{font-size:9.5px;margin-top:4px}}
-@media(max-width:900px){html[data-theme='dark'] .menu{background:#051A40;border-color:rgba(255,255,255,.10)}.theme-toggle{width:40px;height:40px;flex-basis:40px;font-size:17px}}
-@media(max-width:520px){.brand{width:205px;flex-basis:205px}.brand-symbol{width:44px;height:44px;flex-basis:44px}.brand-symbol img{height:44px}.brand-name{font-size:22px}.brand-tagline{font-size:8.5px}.theme-toggle{width:36px;height:36px;flex-basis:36px;font-size:16px}}
-`;
-document.head.appendChild(themeStyles);
+const ICON_SUN='<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="3.6" stroke="currentColor" stroke-width="1.6"/><path d="M9 1.2v2M9 14.8v2M16.8 9h-2M3.2 9h-2M14.5 3.5l-1.4 1.4M4.9 13.1l-1.4 1.4M14.5 14.5l-1.4-1.4M4.9 4.9L3.5 3.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>';
+const ICON_MOON='<svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M15.5 10.3A6.3 6.3 0 1 1 7.7 2.5a5 5 0 0 0 7.8 7.8Z" fill="currentColor"/></svg>';
+const ICON_MENU='<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M2.5 5.5h15M2.5 10h15M2.5 14.5h15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
+const ICON_CLOSE='<svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4.5 4.5l11 11M15.5 4.5l-11 11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
 
 const nav=document.querySelector('.nav');
 const accent=document.querySelector('.accent');
@@ -80,7 +13,7 @@ if(nav){
   themeButton.type='button';
   const syncThemeButton=()=>{
     const dark=root.dataset.theme==='dark';
-    themeButton.textContent=dark?'☀':'☾';
+    themeButton.innerHTML=dark?ICON_SUN:ICON_MOON;
     themeButton.setAttribute('aria-label',dark?'Cambiar a modo claro':'Cambiar a modo oscuro');
     themeButton.title=dark?'Modo claro':'Modo oscuro';
   };
@@ -97,16 +30,49 @@ if(nav){
 const toggle=document.querySelector('.mobile-toggle');
 const menu=document.querySelector('.menu');
 if(toggle&&menu){
-  toggle.addEventListener('click',()=>menu.classList.toggle('open'));
-  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+  toggle.innerHTML=ICON_MENU;
+  toggle.setAttribute('aria-expanded','false');
+  toggle.addEventListener('click',()=>{
+    const open=menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded',String(open));
+    toggle.innerHTML=open?ICON_CLOSE:ICON_MENU;
+  });
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.innerHTML=ICON_MENU;
+  }));
 }
 
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
+const contactForm=document.getElementById('contact-form');
+if(contactForm){
+  contactForm.addEventListener('submit',e=>{
+    e.preventDefault();
+    const data=new FormData(contactForm);
+    const body=[
+      `Nombre: ${data.get('name')||''}`,
+      `Correo: ${data.get('email')||''}`,
+      `Teléfono: ${data.get('phone')||''}`,
+      `Tipo de proyecto: ${data.get('type')||''}`,
+      '',
+      data.get('message')||''
+    ].join('\n');
+    const subject=`Cotización de proyecto — ${data.get('name')||'sitio web'}`;
+    window.location.href=`mailto:info@solsanit.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
-},{threshold:.14});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+}
+
+const reduceMotion=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(reduceMotion){
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
+}else{
+  const observer=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target);
+      }
+    });
+  },{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+}
