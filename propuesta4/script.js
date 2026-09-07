@@ -134,19 +134,6 @@
     });
   });
 
-  /* ---------------- Hero photo subtle scale on scroll (home) ---------------- */
-  const heroFrame = document.getElementById('heroPhotoFrame');
-  if (heroFrame && !reduced) {
-    gsap.fromTo(heroFrame.querySelector('img'),
-      { scale: 1.06 },
-      {
-        scale: 1,
-        ease: 'none',
-        scrollTrigger: { trigger: heroFrame, start: 'top bottom', end: 'bottom top', scrub: true },
-      }
-    );
-  }
-
   /* ---------------- Servicios: pinned scroll-driven reveal ---------------- */
   const svcPin = document.getElementById('svcPin');
   const svcItems = gsap.utils.toArray('.svc-item');

@@ -199,14 +199,6 @@ nav.chapters a.is-active::after{width:100%}
 #intro .statement em{font-style:normal;color:var(--muted)}
 #intro .sub{margin-top:34px;max-width:46ch;color:var(--muted);font-size:17px;line-height:1.6}
 
-/* ---------- 02 Hero photo moment (asymmetric bleed, no text on photo) ---------- */
-#hero-photo{background:var(--navy);padding-top:clamp(50px,7vw,90px);padding-bottom:clamp(50px,7vw,90px)}
-.hero-photo-frame{position:relative;margin-left:clamp(0px,8vw,140px);overflow:hidden;max-width:1300px}
-.hero-photo-frame img{width:100%;height:auto;display:block;will-change:transform}
-.hero-photo-caption{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;padding-right:clamp(0px,8vw,140px);color:#fff}
-.hero-photo-caption .cap-title{font-family:'Archivo',sans-serif;font-weight:800;font-size:14px;letter-spacing:.02em}
-.hero-photo-caption .cap-meta{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:.04em;text-transform:uppercase}
-
 /* ---------- 03 Servicios: pinned scroll-driven reveal ---------- */
 #servicios{background:var(--paper)}
 .svc-pin{display:grid;grid-template-columns:1.1fr 1fr;min-height:100vh}
