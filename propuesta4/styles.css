@@ -54,16 +54,19 @@ body.is-loaded .sub-hero-content{opacity:1;transform:translateY(0)}
 .sub-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:14px}
 .sub-title{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(30px,5.2vw,60px);line-height:1.08;max-width:16ch;letter-spacing:-0.01em}
 
-/* ---------- Section index (home: links out to the interior pages) ---------- */
-.index-row{display:grid;grid-template-columns:60px 1fr 1fr;align-items:center;gap:24px;padding:28px 0;border-top:1px solid var(--line);transition:background-color .3s}
-.index-row:last-child{border-bottom:1px solid var(--line)}
-.index-row:hover{background:rgba(10,61,167,.04)}
-.index-row .index-num{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;color:var(--navy-2)}
-.index-row .index-title{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,28px);color:var(--navy)}
-.index-row .index-desc{color:var(--muted);font-size:15px;max-width:42ch}
+/* ---------- Journey (home): a short story branching off one line, not a section directory ---------- */
+#journey{position:relative;padding-block:clamp(70px,9vw,110px)}
+#journey::before{content:'';position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--navy-2),var(--green))}
+.journey-row{position:relative;max-width:560px;margin:0 0 56px calc(var(--indent,0px) * 1);padding-left:40px}
+.journey-row:last-child{margin-bottom:0}
+.journey-row::before{content:'';position:absolute;left:calc(-1 * var(--indent,0px));top:22px;width:calc(var(--indent,0px) + 40px);height:2px;background:var(--navy-2)}
+.journey-verb{display:block;font-size:clamp(30px,4.6vw,52px);color:var(--navy);letter-spacing:-0.01em;margin-bottom:10px}
+.journey-row p{color:var(--muted);font-size:16px;line-height:1.6}
+.journey-row a{color:var(--navy-2);font-weight:700;white-space:nowrap;border-bottom:1px solid transparent;transition:border-color .3s}
+.journey-row a:hover{border-color:var(--navy-2)}
 @media (max-width:700px){
-  .index-row{grid-template-columns:1fr;gap:8px}
-  .index-row .index-desc{max-width:none}
+  .journey-row{margin-left:calc(var(--indent,0px) * 0.35) !important;max-width:none}
+  .journey-row::before{left:calc(-1 * var(--indent,0px) * 0.35)}
 }
 
 /* ---------- Secondary CTA band (closes every interior page, points to Contacto) ---------- */
@@ -205,12 +208,14 @@ nav.chapters a.is-active::after{width:100%}
 .svc-media{position:relative;overflow:hidden;background:var(--navy)}
 .svc-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s var(--ease)}
 .svc-media img.is-active{opacity:1}
-.svc-list{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,80px)}
-.svc-item{padding:26px 0;border-top:1px solid var(--line);cursor:default;opacity:.4;transition:opacity .35s var(--ease)}
-.svc-item:last-child{border-bottom:1px solid var(--line)}
+.svc-list{display:flex;flex-direction:column;justify-content:center;padding:clamp(40px,6vw,80px);position:relative}
+.svc-intro{color:var(--muted);font-size:14px;max-width:34ch;margin:0 0 32px 24px}
+.svc-list::before{content:'';position:absolute;left:0;top:78px;bottom:40px;width:2px;background:linear-gradient(var(--navy-2),var(--green))}
+.svc-item{position:relative;padding:26px 0 26px 24px;cursor:default;opacity:.4;transition:opacity .35s var(--ease)}
+.svc-item::before{content:'';position:absolute;left:0;top:38px;width:16px;height:2px;background:var(--navy-2)}
 .svc-item.is-active{opacity:1}
-.svc-item .svc-num{font-family:'Archivo',sans-serif;font-weight:800;font-size:12px;color:var(--navy-2);letter-spacing:.05em}
-.svc-item h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,30px);margin:8px 0 0;color:var(--navy)}
+.svc-item .svc-num{font-family:'Inter',sans-serif;font-weight:600;font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.svc-item h3{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,30px);margin:6px 0 0;color:var(--navy)}
 .svc-item p{max-height:0;overflow:hidden;opacity:0;color:var(--muted);font-size:15px;line-height:1.6;transition:max-height .4s var(--ease), opacity .3s var(--ease), margin .4s var(--ease);margin-top:0}
 .svc-item.is-active p{max-height:120px;opacity:1;margin-top:10px}
 @media (max-width:900px){
@@ -218,6 +223,7 @@ nav.chapters a.is-active::after{width:100%}
   .svc-media{height:56vw}
   .svc-media img{position:static;opacity:1 !important;height:100%;object-fit:cover}
   .svc-list{padding:32px 20px}
+  .svc-intro{margin-left:24px}
   .svc-item{opacity:1}
   .svc-item p{max-height:none;opacity:1;margin-top:10px}
 }
@@ -245,17 +251,25 @@ nav.chapters a.is-active::after{width:100%}
   .project-annot div:first-child{border-top:none;padding-top:0}
 }
 
-/* ---------- 05 Nosotros: numeral-driven narrative ---------- */
+/* ---------- 05 Nosotros: trajectory as a branching network, not a giant statistic ---------- */
 #nosotros{background:var(--paper);padding-block:clamp(90px,12vw,160px);overflow:hidden}
-.nos-wrap{position:relative}
-.nos-num{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(140px,26vw,420px);line-height:.75;color:var(--navy-2);letter-spacing:-0.02em;user-select:none}
-.nos-copy{max-width:44ch;margin-top:-2vw;position:relative;z-index:2}
-.nos-copy p{font-size:clamp(17px,1.6vw,20px);line-height:1.7;color:var(--ink)}
-.nos-copy p + p{margin-top:18px}
-.nos-copy .accent{color:var(--green);font-weight:700}
-.nos-strip{display:flex;gap:14px;margin-top:56px;overflow:hidden}
+.traj-heading{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,4vw,44px);color:var(--navy);margin-bottom:48px}
+.traj-wrap{position:relative}
+.traj-wrap::before{content:'';position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(var(--navy-2),var(--green))}
+.traj-item{position:relative;max-width:600px;margin:0 0 52px calc(var(--indent,0px) * 1);padding-left:36px}
+.traj-item:last-child{margin-bottom:0}
+.traj-item::before{content:'';position:absolute;left:calc(-1 * var(--indent,0px));top:14px;width:calc(var(--indent,0px) + 36px);height:2px;background:var(--navy-2)}
+.traj-item-accent::before{background:var(--green)}
+.traj-year{display:inline-block;background:var(--navy);color:#fff;font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;letter-spacing:.03em;padding:6px 10px;margin-bottom:12px}
+.traj-item-accent .traj-year{background:var(--green)}
+.traj-item p{color:var(--ink);font-size:16px;line-height:1.7}
+.nos-strip{display:flex;gap:14px;margin-top:64px;overflow:hidden}
 .nos-strip img{height:160px;width:auto;flex:none;object-fit:cover;will-change:transform}
-@media (max-width:700px){ .nos-strip img{height:110px} }
+@media (max-width:700px){
+  .nos-strip img{height:110px}
+  .traj-item{margin-left:calc(var(--indent,0px) * 0.3) !important;max-width:none}
+  .traj-item::before{left:calc(-1 * var(--indent,0px) * 0.3)}
+}
 
 /* ---------- 06 Conocimiento: technical archive list ---------- */
 #conocimiento{color:#fff}

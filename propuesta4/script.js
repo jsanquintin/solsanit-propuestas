@@ -168,14 +168,7 @@
     });
   });
 
-  /* ---------------- Nosotros: numeral scrub + image strip parallax ---------------- */
-  const nosNum = document.getElementById('nosNum');
-  if (nosNum && !reduced) {
-    gsap.fromTo(nosNum, { opacity: 0.25, x: -30 }, {
-      opacity: 1, x: 0, ease: 'none',
-      scrollTrigger: { trigger: '#nosotros', start: 'top 80%', end: 'top 20%', scrub: true },
-    });
-  }
+  /* ---------------- Nosotros: image strip parallax ---------------- */
   const nosStrip = document.getElementById('nosStrip');
   if (nosStrip && !reduced) {
     gsap.to(nosStrip, {
