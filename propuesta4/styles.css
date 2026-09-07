@@ -36,6 +36,82 @@ a{color:inherit;text-decoration:none}
 .skip-link{position:fixed;left:12px;top:-60px;z-index:200;background:var(--navy);color:#fff;padding:12px 18px;font-weight:600;transition:top .2s var(--ease)}
 .skip-link:focus{top:12px}
 
+/* ---------- Page transition (curtain between real pages, keeps the continuity) ---------- */
+#pageTransition{position:fixed;inset:0;background:var(--navy);z-index:300;opacity:0;pointer-events:none;transition:opacity .5s var(--ease)}
+#pageTransition.is-active{opacity:1;pointer-events:all}
+body.is-leaving #pageTransition{opacity:1;pointer-events:all}
+@media (prefers-reduced-motion: reduce){ #pageTransition{transition:none} }
+
+/* ---------- Interior page hero (compact, same language as the opening) ---------- */
+.sub-hero{position:relative;height:64vh;min-height:440px;overflow:hidden;color:#fff}
+.sub-hero-photo{position:absolute;inset:0}
+.sub-hero-photo img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 6s var(--ease-soft)}
+body.is-loaded .sub-hero-photo img{transform:scale(1)}
+.sub-hero-scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,27,61,.86) 0%,rgba(7,27,61,.2) 60%)}
+.sub-hero-content{position:relative;height:100%;max-width:1400px;margin:0 auto;display:flex;flex-direction:column;justify-content:flex-end;padding:0 clamp(20px,6vw,90px) 60px;
+  opacity:0;transform:translateY(16px);transition:opacity .9s var(--ease-soft) .2s, transform .9s var(--ease-soft) .2s}
+body.is-loaded .sub-hero-content{opacity:1;transform:translateY(0)}
+.sub-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:14px}
+.sub-title{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(30px,5.2vw,60px);line-height:1.08;max-width:16ch;letter-spacing:-0.01em}
+
+/* ---------- Section index (home: links out to the interior pages) ---------- */
+.index-row{display:grid;grid-template-columns:60px 1fr 1fr;align-items:center;gap:24px;padding:28px 0;border-top:1px solid var(--line);transition:background-color .3s}
+.index-row:last-child{border-bottom:1px solid var(--line)}
+.index-row:hover{background:rgba(10,61,167,.04)}
+.index-row .index-num{font-family:'Archivo',sans-serif;font-weight:800;font-size:13px;color:var(--navy-2)}
+.index-row .index-title{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,28px);color:var(--navy)}
+.index-row .index-desc{color:var(--muted);font-size:15px;max-width:42ch}
+@media (max-width:700px){
+  .index-row{grid-template-columns:1fr;gap:8px}
+  .index-row .index-desc{max-width:none}
+}
+
+/* ---------- Secondary CTA band (closes every interior page, points to Contacto) ---------- */
+.cta-band{background:var(--navy);color:#fff;padding:clamp(60px,9vw,110px) 0;text-align:center}
+.cta-band h2{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,4.4vw,48px);letter-spacing:-0.01em}
+.cta-band .cta-link{display:inline-block;margin-top:26px;font-size:clamp(16px,1.6vw,20px);font-weight:700;color:#fff;border-bottom:2px solid rgba(255,255,255,.5);padding-bottom:3px;transition:border-color .3s,color .3s}
+.cta-band .cta-link:hover{color:var(--green);border-color:var(--green)}
+
+/* ---------- Footer legal links ---------- */
+.site-foot .foot-links{display:flex;gap:18px}
+.site-foot .foot-links a{transition:color .3s}
+.site-foot .foot-links a:hover{color:#fff}
+
+/* ---------- Contact form ---------- */
+.contact-form{max-width:560px;margin:56px auto 0;text-align:left;display:flex;flex-direction:column;gap:22px}
+.form-field{display:flex;flex-direction:column;gap:8px}
+.form-field label{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.form-field input, .form-field textarea{
+  border:none;border-bottom:1px solid var(--line);background:none;font:inherit;font-size:16px;color:var(--ink);
+  padding:10px 2px;transition:border-color .3s;
+}
+.form-field input:focus, .form-field textarea:focus{outline:none;border-color:var(--navy-2)}
+.form-field textarea{resize:vertical;min-height:100px}
+.form-submit{
+  align-self:flex-start;margin-top:6px;background:var(--navy);color:#fff;border:none;
+  font:inherit;font-weight:700;font-size:14px;letter-spacing:.04em;text-transform:uppercase;
+  padding:16px 32px;cursor:pointer;transition:background-color .3s, transform .15s;
+}
+.form-submit:hover{background:var(--navy-2)}
+.form-submit:active{transform:scale(.97)}
+.form-note{font-size:13px;color:var(--muted);margin-top:-8px}
+.form-status{font-size:14px;margin-top:4px;display:none}
+.form-status.is-visible{display:block}
+
+/* ---------- Legal / plain content pages ---------- */
+.legal-content{padding:clamp(120px,14vw,180px) 0 clamp(80px,10vw,120px);max-width:760px}
+.legal-content h1{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(32px,5vw,48px);color:var(--navy);margin-bottom:8px}
+.legal-content .legal-updated{color:var(--muted);font-size:13px;margin-bottom:40px}
+.legal-content h2{font-family:'Archivo',sans-serif;font-weight:700;font-size:20px;color:var(--navy);margin-top:36px}
+.legal-content p, .legal-content li{color:var(--ink);line-height:1.7;font-size:16px}
+.legal-content ul{padding-left:20px}
+
+/* ---------- 404 ---------- */
+.notfound{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:var(--navy);color:#fff;padding:20px}
+.notfound .nf-num{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(80px,18vw,220px);line-height:.85;color:var(--navy-2)}
+.notfound p{font-size:clamp(16px,2vw,20px);color:rgba(255,255,255,.75);margin-top:10px;max-width:36ch}
+.notfound .cta-link{display:inline-block;margin-top:30px;font-weight:700;color:#fff;border-bottom:2px solid rgba(255,255,255,.5);padding-bottom:3px}
+
 /* ---------- Signature line (drawn on scroll) ---------- */
 #signature-line{position:fixed;left:0;top:0;width:100%;height:100vh;pointer-events:none;z-index:40}
 #signature-line svg{width:100%;height:100%}
@@ -60,15 +136,15 @@ header.site-head.is-compact[data-theme="light"]{background:rgba(245,244,241,.85)
 .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:15px;letter-spacing:.02em;color:var(--head-color,#fff);transition:color .4s var(--ease)}
 .brand svg{width:26px;height:auto;flex:none}
 nav.chapters{display:flex;gap:28px}
-nav.chapters button{
+nav.chapters a{
   background:none;border:none;cursor:pointer;font:inherit;
   font-size:13px;font-weight:600;letter-spacing:.03em;
   color:var(--head-color,#fff);opacity:.72;padding:4px 0;position:relative;
   transition:opacity .3s var(--ease);
 }
-nav.chapters button::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--head-color,#fff);transition:width .3s var(--ease)}
-nav.chapters button.is-active{opacity:1}
-nav.chapters button.is-active::after{width:100%}
+nav.chapters a::after{content:'';position:absolute;left:0;bottom:-2px;width:0;height:1px;background:var(--head-color,#fff);transition:width .3s var(--ease)}
+nav.chapters a.is-active{opacity:1}
+nav.chapters a.is-active::after{width:100%}
 @media (max-width:900px){ nav.chapters{display:none} }
 
 #menuToggle{
@@ -118,7 +194,7 @@ nav.chapters button.is-active::after{width:100%}
 @keyframes stem{0%{top:-100%}60%{top:100%}100%{top:100%}}
 
 /* ---------- 01 Intro / statement ---------- */
-#intro{background:var(--paper);padding:clamp(90px,14vw,180px) 0 clamp(60px,8vw,120px)}
+#intro{background:var(--paper);padding-block:clamp(90px,14vw,180px) clamp(60px,8vw,120px)}
 #intro .statement{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(28px,4.4vw,58px);line-height:1.12;max-width:16ch;letter-spacing:-0.01em;color:var(--navy)}
 #intro .statement em{font-style:normal;color:var(--muted)}
 #intro .sub{margin-top:34px;max-width:46ch;color:var(--muted);font-size:17px;line-height:1.6}
@@ -178,7 +254,7 @@ nav.chapters button.is-active::after{width:100%}
 }
 
 /* ---------- 05 Nosotros: numeral-driven narrative ---------- */
-#nosotros{background:var(--paper);padding:clamp(90px,12vw,160px) 0;overflow:hidden}
+#nosotros{background:var(--paper);padding-block:clamp(90px,12vw,160px);overflow:hidden}
 .nos-wrap{position:relative}
 .nos-num{font-family:'Archivo',sans-serif;font-weight:900;font-size:clamp(140px,26vw,420px);line-height:.75;color:var(--navy-2);letter-spacing:-0.02em;user-select:none}
 .nos-copy{max-width:44ch;margin-top:-2vw;position:relative;z-index:2}
@@ -190,9 +266,7 @@ nav.chapters button.is-active::after{width:100%}
 @media (max-width:700px){ .nos-strip img{height:110px} }
 
 /* ---------- 06 Conocimiento: technical archive list ---------- */
-#conocimiento{background:var(--navy);color:#fff;padding:clamp(80px,10vw,140px) 0}
-#conocimiento .chapter-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px;gap:20px;flex-wrap:wrap}
-#conocimiento h2{font-family:'Archivo',sans-serif;font-weight:800;font-size:clamp(30px,4vw,48px);max-width:14ch}
+#conocimiento{color:#fff}
 .archive-row{display:grid;grid-template-columns:80px 1fr auto;align-items:center;gap:24px;padding:26px 0;border-top:1px solid rgba(255,255,255,.14);transition:background-color .3s}
 .archive-row:last-child{border-bottom:1px solid rgba(255,255,255,.14)}
 .archive-row:hover{background:rgba(255,255,255,.03)}
