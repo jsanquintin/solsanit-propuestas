@@ -1,0 +1,43 @@
+name: Tighten MTCJH logo
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mtcjh-logo-tight.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tighten navbar logo
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('mtcjh-demo/v2.html')
+          s = p.read_text(encoding='utf-8')
+          old = '''/* Approved MTCJH identity */
+.brand{background:rgba(250,250,250,.97);border:1px solid rgba(255,255,255,.58);border-radius:14px;padding:5px 10px;box-shadow:0 10px 28px rgba(0,0,0,.16)}
+.brand img{object-fit:contain}
+.foot img{background:rgba(250,250,250,.97);border-radius:12px;padding:5px 9px}'''
+          new = '''/* Approved MTCJH identity — tight navbar lockup */
+.brand{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.97);border:0;border-radius:9px;padding:2px 5px;box-shadow:0 6px 18px rgba(0,0,0,.14);overflow:hidden;line-height:0}
+.brand img{display:block;height:48px;width:auto;max-width:42vw;object-fit:contain;transform:scale(1.025);transform-origin:center}
+.foot img{background:rgba(255,255,255,.97);border-radius:9px;padding:3px 6px}
+@media(max-width:580px){.navin{height:64px}.brand{border-radius:8px;padding:2px 4px}.brand img{height:40px;max-width:62vw;transform:scale(1.02)}}'''
+          if old not in s:
+              raise SystemExit('Expected logo CSS block not found; refusing unsafe edit')
+          s = s.replace(old, new, 1)
+          p.write_text(s, encoding='utf-8')
+      - name: Remove one-shot workflow
+        run: rm .github/workflows/mtcjh-logo-tight.yml
+      - name: Commit change
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mtcjh-demo/v2.html .github/workflows/mtcjh-logo-tight.yml
+          git commit -m "fix: tighten MTCJH navbar logo crop"
+          git push
