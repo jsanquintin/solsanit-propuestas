@@ -1,0 +1,42 @@
+name: Optimize MTCJH hero
+
+on:
+  push:
+    paths:
+      - '.github/workflows/mtcjh-hero-optimize.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Optimize hero messaging
+        shell: python
+        run: |
+          from pathlib import Path
+          p = Path('mtcjh-demo/v2.html')
+          s = p.read_text(encoding='utf-8')
+
+          old = '''<section class="hero" id="inicio"><div class="shell heroGrid"><div><div class="ey">Mechanical Technical Center JH</div><h1 class="display">PRECISIÓN<br><span>EN MOVIMIENTO.</span></h1><p class="lead">Diagnóstico, mantenimiento y mecánica automotriz con un principio claro: entender la causa antes de intervenir el vehículo.</p><div class="actions"><a class="btn primary" href="#contacto">Agendar diagnóstico</a><a class="btn" href="#diagnostico">Explorar una falla</a></div><div class="meta"><span><i></i>Diagnóstico técnico</span><span><i></i>Proceso transparente</span><span><i></i>Decisión informada</span></div></div>'''
+
+          new = '''<section class="hero" id="inicio"><div class="shell heroGrid"><div><div class="ey">Diagnóstico automotriz · Santo Domingo</div><h1 class="display">PRECISIÓN<br><span>EN MOVIMIENTO.</span></h1><p class="lead">Diagnóstico, mantenimiento y reparación automotriz con un principio claro: identificar la causa antes de cambiar piezas, explicar lo encontrado y reparar solo con tu autorización.</p><div class="actions"><a class="btn primary" href="#contacto">Agendar diagnóstico</a><a class="btn" href="https://wa.me/18494522208?text=Hola%20MTCJH%2C%20quiero%20consultar%20sobre%20un%20servicio%20para%20mi%20veh%C3%ADculo." target="_blank" rel="noopener">Hablar por WhatsApp</a></div><div class="meta"><span><i></i>Diagnóstico antes de reemplazar</span><span><i></i>Explicación clara</span><span><i></i>Autorización antes de reparar</span></div></div>'''
+
+          if old not in s:
+              raise SystemExit('Hero original no encontrado; no se aplicaron cambios')
+
+          s = s.replace(old, new, 1)
+          p.write_text(s, encoding='utf-8')
+
+      - name: Remove one-shot workflow
+        run: rm .github/workflows/mtcjh-hero-optimize.yml
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add mtcjh-demo/v2.html .github/workflows/mtcjh-hero-optimize.yml
+          git commit -m "feat: optimize MTCJH hero messaging"
+          git push
